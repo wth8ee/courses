@@ -6,8 +6,12 @@ import { signInWithPopup, signInWithRedirect } from "firebase/auth";
 import { auth, googleProvider } from "../config/firebase";
 import { useSelector } from "react-redux";
 import { AvatarPlaceholder } from "../components/AvatarPlaceholder";
+import { ProfileDropDown } from "../components/ProfileDropDown";
+import { useState } from "react";
 
 export function HomePage() {
+  const [isOpen, setIsOpen] = useState(false);
+
   async function signInWithGoogle() {
     await signInWithPopup(auth, googleProvider);
   }
@@ -23,8 +27,12 @@ export function HomePage() {
           </Button>
         )}
         {user && (
-          <AvatarPlaceholder className="h-[calc(max(5vw,60px)-1rem)] w-[calc(max(5vw,60px)-1rem)] cursor-pointer" />
+          <AvatarPlaceholder
+            onClick={() => setIsOpen(true)}
+            className="h-[calc(max(5vw,60px)-1rem)] w-[calc(max(5vw,60px)-1rem)] cursor-pointer"
+          />
         )}
+        <ProfileDropDown isOpen={isOpen} onClose={() => setIsOpen(false)} />
       </Header>
       <main className="mt-5 w-full flex justify-center">
         <div className="w-[max(80vw,400px)] flex flex-col">
