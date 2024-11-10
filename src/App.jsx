@@ -10,7 +10,7 @@ export default function App() {
   ]);
 
   return (
-    <div className="w-screen min-h-screen bg-slate-50 overflow-x-hidden overflow-y-auto">
+    <div className="w-screen min-h-screen bg-slate-100 overflow-x-hidden overflow-y-auto">
       <RouterProvider router={router} />
     </div>
   );

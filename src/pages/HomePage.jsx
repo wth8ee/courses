@@ -14,12 +14,17 @@ export function HomePage() {
   return (
     <div className="w-full">
       <Header className="justify-end">
-        <Button onClick={signInWithGoogle}>Вход</Button>
+        <Button className="text-[max(1.2vw,16px)]" onClick={signInWithGoogle}>
+          Вход
+        </Button>
       </Header>
       <main className="mt-5 w-full flex justify-center">
         <div className="w-[max(50vw,400px)] flex flex-col">
           <CoursesSlider />
-          <Button className="self-end mr-[calc(2.5rem+max(1vw,10px))] flex items-center gap-4 whitespace-nowrap">
+          <Button
+            outline
+            className="self-end mr-[calc(2.5rem+max(1vw,10px))] flex items-center gap-4 whitespace-nowrap"
+          >
             <span className="flex">Все курсы</span>{" "}
             <ChevronRightIcon className="h-6" />
           </Button>

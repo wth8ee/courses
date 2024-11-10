@@ -63,15 +63,15 @@ export function CoursesSlider() {
       />
 
       <CourseCard
-        title="Node JS"
-        lessons={46}
-        icon={<NodejsIcon className="w-full h-full" />}
-      />
-
-      <CourseCard
         title="JavaScript"
         lessons={209}
         icon={<JsIcon className="w-full h-full" />}
+      />
+
+      <CourseCard
+        title="Node JS"
+        lessons={46}
+        icon={<NodejsIcon className="w-full h-full" />}
       />
 
       <CourseCard
