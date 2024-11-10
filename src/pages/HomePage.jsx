@@ -4,19 +4,25 @@ import { CoursesSlider } from "../components/CoursesSlider";
 import { Header } from "../components/Header";
 import { signInWithPopup, signInWithRedirect } from "firebase/auth";
 import { auth, googleProvider } from "../config/firebase";
+import { useSelector } from "react-redux";
 
 export function HomePage() {
   async function signInWithGoogle() {
-    await signInWithRedirect(auth, googleProvider);
+    await signInWithPopup(auth, googleProvider);
     console.log(auth.currentUser);
   }
+
+  const user = useSelector(state => state.user.user);
 
   return (
     <div className="w-full">
       <Header className="justify-end">
-        <Button className="text-[max(1.2vw,16px)]" onClick={signInWithGoogle}>
-          Вход
-        </Button>
+        {!user && (
+          <Button className="text-[max(1.2vw,16px)]" onClick={signInWithGoogle}>
+            Вход
+          </Button>
+        )}
+        {user && <div>{user.email}</div>}
       </Header>
       <main className="mt-5 w-full flex justify-center">
         <div className="w-[max(50vw,400px)] flex flex-col">
