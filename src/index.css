@@ -8,9 +8,19 @@ html {
 }
 
 .slick-slide > div {
-  margin-inline: 1vw;
+  margin-inline: max(1vw,10px);
 }
 
-.slick-slider, .slick-list, .slick-track {
-  overflow-y: visible;
+.slick-next::before, .slick-prev::before {
+  display: none;
+}
+
+.slick-prev, .slick-next {
+  position: static !important;
+  width: 5rem !important;
+}
+
+.slick-slider {
+  display: flex !important;
+  align-items: center;
 }

@@ -14,12 +14,21 @@ export function CourseCard({ title, icon, lessons }) {
   }
 
   return (
-    <div className="flex flex-col gap-2 items-center mb-5 mt-5 bg-white shadow-md p-5 rounded-lg hover:scale-110 transition-transform cursor-pointer">
-      <div className="w-full flex justify-center mb-5">
-        <div className="h-20">{icon}</div>
+    <div
+      className={`flex flex-col gap-2 items-center my-5 
+      bg-white shadow p-adpt rounded-lg hover:scale-110 
+        transition-transform cursor-pointer whitespace-nowrap`}
+    >
+      <div className="w-full flex justify-center mb-adpt">
+        <div className="w-[max(7vw,70px)] h-[max(7vw,70px)] flex justify-center items-center">
+          {icon}
+        </div>
       </div>
-      <div className="font-medium text-2xl">{title}</div>
-      <div>Уроков: {lessons}</div>
+      <div className="h-[1px] w-[80%] bg-slate-400" />
+      <div className="font-medium text-adptxl mt-[max(0.5vw,2.5px)]">
+        {title}
+      </div>
+      <div className="text-adptmd">Уроков: {lessons}</div>
       <div>
         <Button>К курсу</Button>
       </div>
