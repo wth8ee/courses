@@ -14,13 +14,30 @@ import { FirebaseIcon } from "../icons/FirebaseIcon";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/16/solid";
 import clsx from "clsx";
 import { NodejsIcon } from "../icons/NodejsIcon";
+import { useState } from "react";
 
 export function CoursesSlider() {
+  const [slidesNumber, setSlidesNumber] = useState(getSlidesNumber());
+
+  window.addEventListener("resize", () => {
+    setSlidesNumber(getSlidesNumber());
+  });
+
+  function getSlidesNumber(n = 5) {
+    const width = window.innerWidth;
+    if (650 <= width && width <= 800) {
+      n -= 1;
+    } else if (width < 650) {
+      n -= 2;
+    }
+    return n;
+  }
+
   const settings = {
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToShow: slidesNumber,
+    slidesToScroll: slidesNumber - 1,
     autoplay: false,
     speed: 1500,
     autoplaySpeed: 4000,

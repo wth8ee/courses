@@ -10,7 +10,6 @@ import { AvatarPlaceholder } from "../components/AvatarPlaceholder";
 export function HomePage() {
   async function signInWithGoogle() {
     await signInWithPopup(auth, googleProvider);
-    console.log(auth.currentUser);
   }
 
   const user = useSelector(state => state.user.user);
@@ -24,11 +23,11 @@ export function HomePage() {
           </Button>
         )}
         {user && (
-          <AvatarPlaceholder className="h-[calc(max(5vw,40px)-1rem)] w-[calc(max(5vw,40px)-1rem)] cursor-pointer" />
+          <AvatarPlaceholder className="h-[calc(max(5vw,60px)-1rem)] w-[calc(max(5vw,60px)-1rem)] cursor-pointer" />
         )}
       </Header>
       <main className="mt-5 w-full flex justify-center">
-        <div className="w-[max(50vw,400px)] flex flex-col">
+        <div className="w-[max(80vw,400px)] flex flex-col">
           <CoursesSlider />
           <Button
             outline
