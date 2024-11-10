@@ -5,6 +5,7 @@ import { Header } from "../components/Header";
 import { signInWithPopup, signInWithRedirect } from "firebase/auth";
 import { auth, googleProvider } from "../config/firebase";
 import { useSelector } from "react-redux";
+import { AvatarPlaceholder } from "../components/AvatarPlaceholder";
 
 export function HomePage() {
   async function signInWithGoogle() {
@@ -22,7 +23,9 @@ export function HomePage() {
             Вход
           </Button>
         )}
-        {user && <div>{user.email}</div>}
+        {user && (
+          <AvatarPlaceholder className="h-[calc(max(5vw,40px)-1rem)] w-[calc(max(5vw,40px)-1rem)] cursor-pointer" />
+        )}
       </Header>
       <main className="mt-5 w-full flex justify-center">
         <div className="w-[max(50vw,400px)] flex flex-col">
