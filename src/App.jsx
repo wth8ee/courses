@@ -5,12 +5,17 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { auth } from "./config/firebase";
 import { clearUser, setUser } from "./actions/userActions";
+import { CoursesPage } from "./pages/CoursesPage";
 
 export default function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <HomePage />,
+    },
+    {
+      path: "/courses",
+      element: <CoursesPage />,
     },
   ]);
 

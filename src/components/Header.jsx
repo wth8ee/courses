@@ -5,7 +5,7 @@ export function Header({ children, className }) {
     <div
       className={clsx(
         className,
-        "w-full px-4 py-2 h-[max(5vw,60px)] shadow bg-white flex items-center"
+        "w-full px-[max(2vw,6px)] py-[vmax(1vw,4px)] h-[max(5vw,60px)] shadow bg-white flex items-center"
       )}
     >
       {children}

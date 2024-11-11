@@ -15,6 +15,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/16/solid";
 import clsx from "clsx";
 import { NodejsIcon } from "../icons/NodejsIcon";
 import { useState } from "react";
+import { courses } from "../constants";
 
 export function CoursesSlider() {
   const [slidesNumber, setSlidesNumber] = useState(getSlidesNumber());
@@ -65,61 +66,22 @@ export function CoursesSlider() {
     );
   }
 
+  const coursesKeys = Object.keys(courses);
+
   return (
     <Slider {...settings}>
-      <CourseCard
-        title="HTML"
-        lessons={41}
-        icon={<HtmlIcon className="w-full h-full" />}
-      />
-
-      <CourseCard
-        title="CSS"
-        lessons={96}
-        icon={<CssIcon className="w-full h-full" />}
-      />
-
-      <CourseCard
-        title="JavaScript"
-        lessons={209}
-        icon={<JsIcon className="w-full h-full" />}
-      />
-
-      <CourseCard
-        title="Node JS"
-        lessons={46}
-        icon={<NodejsIcon className="w-full h-full" />}
-      />
-
-      <CourseCard
-        title="React JS"
-        lessons={137}
-        icon={<ReactIcon className="w-full h-full" />}
-      />
-
-      <CourseCard
-        title="Tailwind"
-        lessons={80}
-        icon={<TailwindIcon className="w-full h-full" />}
-      />
-
-      <CourseCard
-        title="TypeScript"
-        lessons={58}
-        icon={<TsIcon className="w-full h-full" />}
-      />
-
-      <CourseCard
-        title="Redux"
-        lessons={36}
-        icon={<ReduxIcon className="w-full h-full" />}
-      />
-
-      <CourseCard
-        title="Firebase"
-        lessons={23}
-        icon={<FirebaseIcon className="w-full h-full" />}
-      />
+      {coursesKeys.map(key => {
+        const course = courses[key];
+        return (
+          <CourseCard
+            className="my-5"
+            title={course.title}
+            description={course.description}
+            lessons={course.lessons}
+            icon={<course.icon className="h-full w-full" />}
+          />
+        );
+      })}
     </Slider>
   );
 }
