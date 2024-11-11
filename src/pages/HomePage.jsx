@@ -36,6 +36,9 @@ export function HomePage() {
       </Header>
       <main className="mt-5 w-full flex justify-center">
         <div className="w-[max(80vw,400px)] flex flex-col">
+          <h1 className="ml-[calc(2.5rem+max(1vw,10px))] text-adptxl font-medium">
+            Наши курсы:
+          </h1>
           <CoursesSlider />
           <Button
             outline

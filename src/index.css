@@ -7,6 +7,11 @@ html {
   overflow-y: auto
 }
 
+*,*::before,*::after {
+  margin: 0;
+  padding: 0;
+}
+
 .slick-slide > div {
   margin-inline: max(1vw,10px);
 }

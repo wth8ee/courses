@@ -25,7 +25,7 @@ export function CourseCard({ title, icon, lessons }) {
         </div>
       </div>
       <div className="h-[1px] w-[80%] bg-slate-400" />
-      <div className="font-medium text-adptxl mt-[max(0.5vw,2.5px)]">
+      <div className="font-medium text-adptlg mt-[max(0.5vw,2.5px)]">
         {title}
       </div>
       <div className="text-adptmd">Уроков: {lessons}</div>
