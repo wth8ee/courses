@@ -22,7 +22,7 @@ export function UserProfileCard({ className }) {
       >
         {user && (
           <AvatarPlaceholder
-            className="h-12 w-12"
+            className="max-h-12 max-w-12"
             onClick={() => setIsOpen(true)}
           />
         )}

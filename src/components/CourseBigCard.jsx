@@ -40,7 +40,9 @@ export function CourseBigCard({
       )}
 
       {/* Кнопка */}
-      <Button to={link}>К курсу</Button>
+      <Button className="text-[max(1.2vw,20px)]" to={link}>
+        К курсу
+      </Button>
     </div>
   );
 }

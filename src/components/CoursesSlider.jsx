@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useState } from "react";
-import { courses, coursesKeys } from "../constants";
+import { courses, coursesKeys } from "../courses/main.js";
 import { NextArrow } from "./NextArrow";
 import { PrevArrow } from "./PrevArrow";
 

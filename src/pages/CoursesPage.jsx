@@ -1,6 +1,6 @@
 import { Header } from "../components/Header";
-import { courses } from "../constants";
-import { CourseBigCard } from "../components/CourseBigCart";
+import { courses } from "../courses/main.js";
+import { CourseBigCard } from "../components/CourseBigCard";
 import { UserProfileCard } from "../components/UserProfileCard";
 import { NavPanel } from "../components/NavPanel";
 
@@ -14,7 +14,7 @@ export function CoursesPage() {
         <UserProfileCard />
       </Header>
       <main className="w-full flex flex-col items-center">
-        <h1 className="text-adptxl mb-5 font-medium">
+        <h1 className="text-adptxl mb-5 font-medium text-center">
           Список наших бесплатных курсов:
         </h1>
         <div className="flex flex-wrap mb-5 gap-[max(1vw,10px)] w-[max(80vw,400px)] justify-center">
