@@ -7,6 +7,7 @@ export function CourseBigCard({
   lessons,
   description,
   className,
+  link,
 }) {
   return (
     <div
@@ -39,7 +40,7 @@ export function CourseBigCard({
       )}
 
       {/* Кнопка */}
-      <Button>К курсу</Button>
+      <Button to={link}>К курсу</Button>
     </div>
   );
 }

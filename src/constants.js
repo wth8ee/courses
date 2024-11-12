@@ -19,7 +19,8 @@ export const courses = {
         описывает структуру контента на сайте, включая 
         заголовки, абзацы, изображения и ссылки.
       `,
-      icon: HtmlIcon
+      icon: HtmlIcon,
+      link: "/courses/html"
     },
     css: {
       title: "CSS",
@@ -29,7 +30,8 @@ export const courses = {
         веб-страниц. Он позволяет изменять внешний вид элементов 
         на странице, включая цвета, шрифты, отступы и расположение.
       `,
-      icon: CssIcon
+      icon: CssIcon,
+      link: "/courses/css"
     },
     javascript: {
       title: "JavaScript",
@@ -39,7 +41,8 @@ export const courses = {
         для создания интерактивных и динамичных элементов на 
         веб-страницах, таких как анимации, обработка форм и многое другое.
       `,
-      icon: JsIcon
+      icon: JsIcon,
+      link: "/courses/javascript"
     },
     git: {
       title: "Git",
@@ -49,7 +52,8 @@ export const courses = {
         отслеживать изменения в коде и работать над проектами совместно, 
         синхронизируя изменения между несколькими участниками.
       `,
-      icon: GitIcon
+      icon: GitIcon,
+      link: "/courses/git"
     },
     tailwind: {
       title: "Tailwind CSS",
@@ -59,7 +63,8 @@ export const courses = {
         с помощью утилитарных классов. Он позволяет быстро разрабатывать стили 
         без необходимости писать кастомный CSS.
       `,
-      icon: TailwindIcon
+      icon: TailwindIcon,
+      link: "/courses/tailwind"
     },
     react: {
       title: "React JS",
@@ -69,7 +74,8 @@ export const courses = {
         Она позволяет строить сложные приложения с использованием компонентов, 
         которые легко управляются и обновляются.
       `,
-      icon: ReactIcon
+      icon: ReactIcon,
+      link: "/courses/react"
     },
     nodejs: {
       title: "Node JS",
@@ -79,7 +85,8 @@ export const courses = {
         движке V8 от Google Chrome. Она используется для разработки масштабируемых 
         и высокоэффективных серверных приложений.
       `,
-      icon: NodejsIcon
+      icon: NodejsIcon,
+      link: "/courses/nodejs"
     },
     typescript: {
       title: "TypeScript",
@@ -89,7 +96,8 @@ export const courses = {
         статической типизации. Это помогает разработчикам обнаруживать ошибки 
         на ранних стадиях разработки и улучшает автозавершение кода в редакторах.
       `,
-      icon: TsIcon
+      icon: TsIcon,
+      link: "/courses/typescript"
     },
     redux: {
       title: "Redux",
@@ -99,7 +107,8 @@ export const courses = {
         Она помогает централизованно управлять состоянием и упрощает обмен данными 
         между компонентами в приложении.
       `,
-      icon: ReduxIcon
+      icon: ReduxIcon,
+      link: "/courses/redux"
     },
     firebase: {
       title: "Firebase",
@@ -109,7 +118,10 @@ export const courses = {
         Она предоставляет решения для аутентификации, хранения данных, аналитики и 
         многого другого.
       `,
-      icon: FirebaseIcon
+      icon: FirebaseIcon,
+      link: "/courses/firebase"
     }
   };
+
+  export const coursesKeys = Object.keys(courses)
   

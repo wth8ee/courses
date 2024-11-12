@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { Button } from "./Button";
 
-export function CourseCard({ title, icon, lessons, className }) {
+export function CourseCard({ title, icon, lessons, className, link }) {
   return (
     <div
       className={clsx(
@@ -22,7 +22,7 @@ export function CourseCard({ title, icon, lessons, className }) {
       </div>
       <div className="text-adptmd">Уроков: {lessons}</div>
       <div>
-        <Button>К курсу</Button>
+        <Button to={link}>К курсу</Button>
       </div>
     </div>
   );

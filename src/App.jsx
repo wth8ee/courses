@@ -2,10 +2,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { auth } from "./config/firebase";
 import { clearUser, setUser } from "./actions/userActions";
 import { CoursesPage } from "./pages/CoursesPage";
+import { CoursePage } from "./pages/CoursePage";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -16,6 +17,10 @@ export default function App() {
     {
       path: "/courses",
       element: <CoursesPage />,
+    },
+    {
+      path: "/courses/:course",
+      element: <CoursePage />,
     },
   ]);
 
