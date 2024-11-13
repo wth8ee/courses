@@ -1,16 +1,12 @@
 import clsx from "clsx";
+import { getLessons } from "../model/getLessons";
 
 export function CourseProgram({ program, className }) {
-  if (!program.length) {
+  if (!program?.length) {
     return;
   }
 
-  const allLessons = [];
-  for (let block of program) {
-    for (let lesson of block.lessons) {
-      allLessons.push(lesson);
-    }
-  }
+  const allLessons = getLessons(program);
 
   return (
     <div className={clsx(className, "flex flex-col gap-5")}>
@@ -28,7 +24,6 @@ export function CourseProgram({ program, className }) {
           {block?.lessons?.map((lesson, i, lessons) => {
             return (
               <div key={i}>
-                {/* {i != 0 && <div className="w-full h-[1px] bg-slate-400" />} */}
                 <div
                   key={i}
                   className={clsx(

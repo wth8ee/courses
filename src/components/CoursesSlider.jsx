@@ -39,10 +39,11 @@ export function CoursesSlider() {
 
   return (
     <Slider {...settings}>
-      {coursesKeys.map(key => {
+      {coursesKeys.map((key, i) => {
         const course = courses[key];
         return (
           <CourseCard
+            key={i}
             className="my-5"
             title={course.title}
             description={course.description}

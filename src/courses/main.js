@@ -8,11 +8,13 @@ import { ReactIcon } from "../icons/ReactIcon";
 import { ReduxIcon } from "../icons/ReduxIcon";
 import { TailwindIcon } from "../icons/TailwindIcon";
 import { TsIcon } from "../icons/TsIcon";
+import { getLessons } from "../model/getLessons";
+import { programs } from "./programs";
 
 export const courses = {
   html: {
     title: "HTML",
-    lessons: 41,
+    lessons: getLessons(programs.html).length,
     description: `
       HTML (Hypertext Markup Language) — это стандартный 
       язык разметки для создания веб-страниц. Он 
@@ -34,7 +36,7 @@ export const courses = {
   },
   css: {
     title: "CSS",
-    lessons: 96,
+    lessons: getLessons(programs.css).length,
     description: `
       CSS (Cascading Style Sheets) используется для стилизации 
       веб-страниц. Он позволяет изменять внешний вид элементов 
@@ -54,7 +56,7 @@ export const courses = {
   },
   javascript: {
     title: "JavaScript",
-    lessons: 209,
+    lessons: getLessons(programs.javascript).length,
     description: `
       JavaScript — это язык программирования, который используется 
       для создания интерактивных и динамичных элементов на 
@@ -74,7 +76,7 @@ export const courses = {
   },
   git: {
     title: "Git",
-    lessons: 50,
+    lessons: getLessons(programs.git).length,
     description: `
       Git — это система контроля версий, которая помогает разработчикам 
       отслеживать изменения в коде и работать над проектами совместно, 
@@ -94,7 +96,7 @@ export const courses = {
   },
   tailwind: {
     title: "Tailwind",
-    lessons: 80,
+    lessons: getLessons(programs.tailwind).length,
     description: `
       Tailwind CSS — это фреймворк для создания пользовательских интерфейсов 
       с помощью утилитарных классов. Он позволяет быстро разрабатывать стили 
@@ -114,7 +116,7 @@ export const courses = {
   },
   nodejs: {
     title: "Node JS",
-    lessons: 46,
+    lessons: getLessons(programs.nodejs).length,
     description: `
       Node.js — это серверная среда выполнения JavaScript, основанная на 
       движке V8 от Google Chrome. Она используется для разработки масштабируемых 
@@ -133,7 +135,7 @@ export const courses = {
   },
   react: {
     title: "React",
-    lessons: 137,
+    lessons: getLessons(programs.react).length,
     description: `
       React — это библиотека JavaScript для создания пользовательских интерфейсов. 
       Она позволяет строить сложные приложения с использованием компонентов, 
@@ -152,7 +154,7 @@ export const courses = {
   },
   typescript: {
     title: "TypeScript",
-    lessons: 58,
+    lessons: getLessons(programs.typescript).length,
     description: `
       TypeScript — это надмножество JavaScript, которое добавляет поддержку 
       статической типизации. Это помогает разработчикам обнаруживать ошибки 
@@ -171,7 +173,7 @@ export const courses = {
   },
   redux: {
     title: "Redux",
-    lessons: 36,
+    lessons: getLessons(programs.redux).length,
     description: `
       Redux — это библиотека для управления состоянием в JavaScript-приложениях. 
       Она помогает централизованно управлять состоянием и упрощает обмен данными 
@@ -190,7 +192,7 @@ export const courses = {
   },
   firebase: {
     title: "Firebase",
-    lessons: 23,
+    lessons: getLessons(programs.firebase).length,
     description: `
       Firebase — это платформа от Google для разработки мобильных и веб-приложений. 
       Она предоставляет решения для аутентификации, хранения данных, аналитики и 

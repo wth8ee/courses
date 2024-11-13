@@ -21,6 +21,10 @@ export default {
         adptmd: "max(1.2vw,12px)",
         adptxl: "max(2.5vw,25px)",
         adptxxl: "max(4vw,30px)"
+      },
+      gap: {
+        adptxl: "max(2.5vw,25px)",
+        adpt: "max(1vw,5px)"
       }
     },
   },

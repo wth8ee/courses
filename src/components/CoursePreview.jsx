@@ -24,10 +24,15 @@ export function CoursePreview({ course }) {
   return (
     <div
       className={`w-full flex bg-white shadow 
-        p-adptxl rounded-xl gap-[max(1vw,55px)]`}
+        p-adptxl rounded-xl gap-[max(1vw,5px)] items-center`}
     >
       <div className="min-w-[max(50%,300px)]">
-        <div className="font-medium text-adptxxl mb-adpt">
+        <div className="font-medium text-adptxxl mb-adpt flex gap-adptxl">
+          {!showIcon && (
+            <div className="flex justify-center items-center">
+              <course.icon className="h-10 w-10" />
+            </div>
+          )}
           {course.title} - Бесплатный курс
         </div>
         <div className="text-adptmd text-gray-600 mb-adpt">
