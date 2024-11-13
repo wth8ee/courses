@@ -41,7 +41,7 @@ export function CoursePreview({ course }) {
         <div className="text-adptmd text-gray-500 mb-adptxl font-light">
           {course.lessons} {lesson} с практикой в браузере
         </div>
-        <Button>Начать обучение</Button>
+        <Button to={`${course.link}/1`}>Начать обучение</Button>
       </div>
       {showIcon && (
         <div className="h-full min-w-[30%] flex justify-center items-center">

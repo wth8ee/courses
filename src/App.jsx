@@ -7,6 +7,7 @@ import { auth } from "./config/firebase";
 import { clearUser, setUser } from "./actions/userActions";
 import { CoursesPage } from "./pages/CoursesPage";
 import { CoursePage } from "./pages/CoursePage";
+import { LessonPage } from "./pages/LessonPage";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -21,6 +22,10 @@ export default function App() {
     {
       path: "/courses/:course",
       element: <CoursePage />,
+    },
+    {
+      path: "/courses/:course/:lessonId",
+      element: <LessonPage />,
     },
   ]);
 

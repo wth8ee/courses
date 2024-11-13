@@ -9,10 +9,7 @@ export function CoursesPage() {
 
   return (
     <div className="w-full flex flex-col items-center">
-      <Header className="justify-between mb-5">
-        <NavPanel />
-        <UserProfileCard />
-      </Header>
+      <Header />
       <main className="w-full flex flex-col items-center">
         <h1 className="text-adptxl mb-5 font-medium text-center">
           Список наших бесплатных курсов:

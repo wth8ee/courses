@@ -10,8 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@codemirror/basic-setup": "^0.20.0",
+    "@codemirror/lang-html": "^6.4.9",
+    "@codemirror/theme-one-dark": "^6.1.2",
+    "@codemirror/view": "^6.34.2",
     "@heroicons/react": "^2.1.5",
     "@reduxjs/toolkit": "^2.3.0",
+    "@uiw/codemirror-extensions-basic-setup": "^4.23.6",
+    "@uiw/codemirror-theme-vscode": "^4.23.6",
+    "@uiw/codemirror-themes": "^4.23.6",
     "@uiw/react-codemirror": "^4.23.6",
     "bootstrap": "^5.3.3",
     "clsx": "^2.1.1",

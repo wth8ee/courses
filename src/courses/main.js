@@ -9,31 +9,11 @@ import { ReduxIcon } from "../icons/ReduxIcon";
 import { TailwindIcon } from "../icons/TailwindIcon";
 import { TsIcon } from "../icons/TsIcon";
 import { getLessons } from "../model/getLessons";
+import { htmlCourse } from "./html/course";
 import { programs } from "./programs";
 
 export const courses = {
-  html: {
-    title: "HTML",
-    lessons: getLessons(programs.html).length,
-    description: `
-      HTML (Hypertext Markup Language) — это стандартный 
-      язык разметки для создания веб-страниц. Он 
-      описывает структуру контента на сайте, включая 
-      заголовки, абзацы, изображения и ссылки.
-    `,
-    icon: HtmlIcon,
-    link: "/courses/html",
-    largeDescription: `
-      HTML (HyperText Markup Language) — основа веб-разработки, язык разметки, 
-      с помощью которого создаются структуры веб-страниц. Он используется для 
-      создания заголовков, абзацев, списков, таблиц, ссылок и других элементов, 
-      которые составляют контент веб-страницы. В этом курсе вы освоите основы 
-      HTML-разметки, научитесь работать с различными типами контента, а также 
-      поймете, как правильно использовать теги для семантического оформления 
-      страниц. Вы научитесь создавать структуру сайта, добавлять текст, изображения 
-      и ссылки, а также внедрять формы для взаимодействия с пользователем.
-    `
-  },
+  html: htmlCourse,
   css: {
     title: "CSS",
     lessons: getLessons(programs.css).length,
