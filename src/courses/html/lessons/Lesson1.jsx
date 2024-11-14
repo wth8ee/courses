@@ -4,6 +4,7 @@ import { html } from "@codemirror/lang-html";
 import { LessonLayout } from "../../../components/LessonLayout";
 import CodeMirror from "@uiw/react-codemirror";
 import { CodeExample } from "../../../components/CodeExample";
+import { getElements } from "../../../model/getElements";
 
 export function Lesson1({ program, lessonId }) {
   const value = `<!DOCTYPE html>
@@ -21,6 +22,11 @@ export function Lesson1({ program, lessonId }) {
 
   const value2 = `<h1>Заголовок</h1>
 <p>Абзац</p>`;
+
+  const test = () => {
+    const children = getElements();
+    return children[0]?.tagName === "H1" && children?.[1].tagName === "P";
+  };
 
   return (
     <LessonLayout
@@ -80,6 +86,7 @@ export function Lesson1({ program, lessonId }) {
           <CodeExample code={value2} />
         </>
       }
+      test={test}
     />
   );
 }

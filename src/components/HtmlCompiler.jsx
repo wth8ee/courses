@@ -6,6 +6,7 @@ export function HtmlCompiler({ code, className }) {
 
   return (
     <div
+      id="compiler"
       className={className}
       dangerouslySetInnerHTML={{ __html: cleanCode }}
     />
