@@ -25,11 +25,11 @@ export function LessonLayout({ test, left, code, task, program, lessonId }) {
   const navigate = useNavigate();
 
   const toNext = () => {
-    navigate(`/courses/${course}/${lessonId + 1}`);
+    navigate(`/courses/${course}/${+lessonId + 1}`);
   };
 
   const toPrev = () => {
-    navigate(`/courses/${course}/${lessonId - 1}`);
+    navigate(`/courses/${course}/${+lessonId - 1}`);
   };
 
   const check = () => {

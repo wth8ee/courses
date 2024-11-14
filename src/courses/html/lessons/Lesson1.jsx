@@ -1,8 +1,4 @@
-import { basicSetup } from "@codemirror/basic-setup";
-import { vscodeLight } from "@uiw/codemirror-theme-vscode";
-import { html } from "@codemirror/lang-html";
 import { LessonLayout } from "../../../components/LessonLayout";
-import CodeMirror from "@uiw/react-codemirror";
 import { CodeExample } from "../../../components/CodeExample";
 import { getElements } from "../../../model/getElements";
 
@@ -55,17 +51,23 @@ export function Lesson1({ program, lessonId }) {
             <p className="mb-2">В этом примере:</p>
             <ul className="list-disc ml-5 mb-5">
               <li>
-                Тег {"<h1>"} используется для создания заголовка первого уровня.
-              </li>
-              <li>Тег {"<p>"} используется для создания абзаца текста.</li>
-              <li>Тег {"<html>"} определяет весь HTML-документ.</li>
-              <li>
-                Тег {"<head>"} содержит метаинформацию о странице, такую как
-                кодировка и название.
+                Тег <code>&lth1&gt</code> используется для создания заголовка
+                первого уровня.
               </li>
               <li>
-                Тег {"<body>"} — это основной контейнер, в котором находится
-                весь видимый контент страницы.
+                Тег <code>&ltp&gt</code> используется для создания абзаца
+                текста.
+              </li>
+              <li>
+                Тег <code>&lthtml&gt</code> определяет весь HTML-документ.
+              </li>
+              <li>
+                Тег <code>&ltmeta&gt</code> содержит метаинформацию о странице,
+                такую как кодировка и название.
+              </li>
+              <li>
+                Тег <code>&ltbody&gt</code> — это основной контейнер, в котором
+                находится весь видимый контент страницы.
               </li>
             </ul>
             <p className="mb-5 text-adpt">
