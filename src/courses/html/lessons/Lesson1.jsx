@@ -19,8 +19,8 @@ export function Lesson1({ program, lessonId }) {
 </body>
 </html>`;
 
-  const value2 = `<h1>Ваш заголовок</h1>
-<p>Ваш абзац</p>`;
+  const value2 = `<h1>Заголовок</h1>
+<p>Абзац</p>`;
 
   return (
     <LessonLayout

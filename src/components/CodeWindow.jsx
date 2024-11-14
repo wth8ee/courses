@@ -3,7 +3,7 @@ import CodeMirror from "@uiw/react-codemirror";
 import { html } from "@codemirror/lang-html";
 import { vscodeLight } from "@uiw/codemirror-theme-vscode";
 
-export function CodeExample({ code, className }) {
+export function CodeWindow({ code, className, onChange }) {
   return (
     <div
       className={clsx(
@@ -12,13 +12,13 @@ export function CodeExample({ code, className }) {
       )}
     >
       <CodeMirror
+        onChange={onChange}
         value={code}
         extensions={html()}
         theme={vscodeLight}
-        readOnly={true}
         basicSetup={{
           foldGutter: false,
-          lineNumbers: false,
+          lineNumbers: true,
           highlightActiveLine: false,
           highlightActiveLineGutter: false,
         }}
