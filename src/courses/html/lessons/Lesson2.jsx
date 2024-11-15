@@ -18,11 +18,6 @@ export function Lesson2({ program, lessonId }) {
 </body>
 </html>`;
 
-  const value2 = `<h1>Тег h1</h1>
-<p>Тег p</p>
-<a href="https://example.com">Тег a с ссылкой</a>
-<img src="image.jpg" alt="Изображение">`;
-
   const test = () => {
     const children = getElements();
     return (
@@ -127,7 +122,6 @@ export function Lesson2({ program, lessonId }) {
             непарные теги. Создайте заголовок, абзац, ссылку и вставьте
             изображение.
           </p>
-          <CodeExample code={value2} />
         </>
       }
       test={test}

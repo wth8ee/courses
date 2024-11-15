@@ -4,23 +4,27 @@
 
 html {
   overflow-x: hidden;
-  overflow-y: auto
+  overflow-y: auto;
 }
 
-*,*::before,*::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
 }
 
 .slick-slide > div {
-  margin-inline: max(1vw,10px);
+  margin-inline: max(1vw, 10px);
 }
 
-.slick-next::before, .slick-prev::before {
+.slick-next::before,
+.slick-prev::before {
   display: none;
 }
 
-.slick-prev, .slick-next {
+.slick-prev,
+.slick-next {
   position: static !important;
   width: 5rem !important;
 }
@@ -30,6 +34,17 @@ html {
   align-items: center;
 }
 
-.CodeMirror:focus {
-  outline: none;
+.CodeMirror:focus,
+.cm-focused {
+  outline: none !important;
+}
+
+#compiler ol {
+  list-style: decimal;
+  margin-left: 20px;
+}
+
+#compiler ul {
+  list-style: circle;
+  margin-left: 20px;
 }

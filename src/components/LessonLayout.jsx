@@ -6,6 +6,7 @@ import { HtmlCompiler } from "./HtmlCompiler";
 import { Button } from "./Button";
 import { useNavigate } from "react-router-dom";
 import { programs } from "../courses/programs";
+import { courses } from "../courses/main.js";
 
 export function LessonLayout({ test, left, code, task, program, lessonId }) {
   const [userCode, setUserCode] = useState(code || "");
@@ -60,6 +61,12 @@ export function LessonLayout({ test, left, code, task, program, lessonId }) {
   return (
     <div className="w-full h-full flex gap-5 lg:flex-nowrap flex-wrap">
       <div className="w-[max(50%,400px)] flex-grow bg-white rounded-lg flex flex-col shadow p-5 overflow-y-auto">
+        <div className="mb-2 text-adptmd text-slate-600">
+          <a className="cursor-pointer underline" href={courses[course]?.link}>
+            {courses[course]?.title}
+          </a>{" "}
+          - {lessonId}/{courses[course]?.lessons}
+        </div>
         <h1 className="text-adptxl font-medium mb-5 mt-0">{lesson}</h1>
         {left}
         <h2 className="text-adptxl font-medium mb-5">Задание</h2>
