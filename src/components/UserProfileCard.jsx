@@ -1,10 +1,13 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ProfileDropDown } from "./ProfileDropDown";
 import { AvatarPlaceholder } from "./AvatarPlaceholder";
-import { useState } from "react";
-import { signInWithPopup } from "firebase/auth";
-import { auth, googleProvider } from "../config/firebase";
+import { useEffect, useState } from "react";
+import { signInWithPopup, signInWithRedirect } from "firebase/auth";
+import { auth, db, googleProvider } from "../config/firebase";
 import { Button } from "./Button";
+import { addDoc, collection } from "firebase/firestore";
+import { getUserProgress } from "../model/getUserProgress";
+import { setProgress } from "../actions/progressActions";
 
 export function UserProfileCard({ className }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +34,6 @@ export function UserProfileCard({ className }) {
         </div>
       </div>
 
-      {/* Всплывающее меню профиля */}
       {user && isOpen && (
         <ProfileDropDown isOpen={isOpen} onClose={() => setIsOpen(false)} />
       )}

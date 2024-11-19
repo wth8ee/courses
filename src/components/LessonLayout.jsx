@@ -1,15 +1,25 @@
 import { useState } from "react";
 import { getLessons } from "../model/getLessons";
-import { CodeExample } from "./CodeExample";
 import { CodeWindow } from "./CodeWindow";
 import { HtmlCompiler } from "./HtmlCompiler";
 import { Button } from "./Button";
 import { useNavigate } from "react-router-dom";
 import { programs } from "../courses/programs";
 import { courses } from "../courses/main.js";
+import { updateProgress } from "../model/updateProgress.js";
+import { useDispatch, useSelector } from "react-redux";
 
-export function LessonLayout({ test, left, code, task, program, lessonId }) {
+export function LessonLayout({
+  test,
+  left,
+  code,
+  task,
+  program,
+  lessonId,
+  progress,
+}) {
   const [userCode, setUserCode] = useState(code || "");
+  const user = useSelector(state => state.user.user);
 
   const lessons = getLessons(program);
   const lesson = lessons[lessonId - 1];
@@ -20,10 +30,14 @@ export function LessonLayout({ test, left, code, task, program, lessonId }) {
     }
   }
 
+  const courseProgress = progress?.[course];
+  const nextAvailable = courseProgress?.includes(Number(lessonId));
+
   const [completed, setCompleted] = useState(false);
   const [failed, setFailed] = useState(false);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const toNext = () => {
     navigate(`/courses/${course}/${+lessonId + 1}`);
@@ -36,6 +50,9 @@ export function LessonLayout({ test, left, code, task, program, lessonId }) {
   const check = () => {
     if (test()) {
       setCompleted(true);
+      if (user) {
+        updateProgress(user.email, course, lessonId, dispatch);
+      }
     } else {
       setFailed(true);
     }
@@ -76,11 +93,11 @@ export function LessonLayout({ test, left, code, task, program, lessonId }) {
         <CodeWindow
           code={userCode}
           onChange={handleChange}
-          className="w-full min-h-[300px] flex-grow"
+          className="w-full min-h-[300px] max-h-[max(50vw,500px)] overflow-y-auto flex-grow"
         />
         <HtmlCompiler
           code={userCode}
-          className="w-full min-h-[200px] flex-grow outline outline-[1px] outline-slate-300 p-2 rounded-lg"
+          className="w-full min-h-[200px] max-h-[max(50vw,500px)] overflow-y-auto flex-grow outline outline-[1px] outline-slate-300 p-2 rounded-lg"
         />
         <div className="flex gap-5 justify-center">
           <Button onClick={toPrev} disabled={lessonId < 2} outline>
@@ -91,7 +108,7 @@ export function LessonLayout({ test, left, code, task, program, lessonId }) {
           </Button>
           <Button
             onClick={toNext}
-            disabled={lessonId == lessons.length}
+            disabled={lessonId == lessons.length || !nextAvailable}
             outline
           >
             Следующий

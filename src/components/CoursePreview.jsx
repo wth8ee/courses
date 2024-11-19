@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { Button } from "./Button";
 
-export function CoursePreview({ course }) {
+export function CoursePreview({ course, progress, courseKey }) {
   const [showIcon, setShowIcon] = useState(window.innerWidth >= 800);
+
+  const courseProgress = progress?.[courseKey];
+  const isStarted = courseProgress?.length >= 1;
+
+  const buttonText = isStarted ? "Продолжить обучение" : "Начать обучение";
+  const lessonLink = courseProgress?.length ? courseProgress.length + 1 : 1;
 
   window.addEventListener("resize", () => {
     setShowIcon(window.innerWidth >= 800);
@@ -41,7 +47,7 @@ export function CoursePreview({ course }) {
         <div className="text-adptmd text-gray-500 mb-adptxl font-light">
           {course.lessons} {lesson} с практикой в браузере
         </div>
-        <Button to={`${course.link}/1`}>Начать обучение</Button>
+        <Button to={`${course.link}/${lessonLink}`}>{buttonText}</Button>
       </div>
       {showIcon && (
         <div className="h-full min-w-[30%] flex justify-center items-center">

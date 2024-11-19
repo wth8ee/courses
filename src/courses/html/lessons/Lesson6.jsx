@@ -2,7 +2,7 @@ import { LessonLayout } from "../../../components/LessonLayout";
 import { CodeExample } from "../../../components/CodeExample";
 import { getElements } from "../../../model/getElements";
 
-export function Lesson6({ program, lessonId }) {
+export function Lesson6({ program, lessonId, progress }) {
   const test = () => {
     const children = getElements();
     const firstChildChildren = children?.[0]?.children
@@ -27,6 +27,7 @@ export function Lesson6({ program, lessonId }) {
     <LessonLayout
       lessonId={lessonId}
       program={program}
+      progress={progress}
       left={
         <>
           <p className="mb-5 text-adpt">

@@ -2,7 +2,7 @@ import { LessonLayout } from "../../../components/LessonLayout";
 import { CodeExample } from "../../../components/CodeExample";
 import { getElements } from "../../../model/getElements";
 
-export function Lesson3({ program, lessonId }) {
+export function Lesson3({ program, lessonId, progress }) {
   const value = `<!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -25,6 +25,7 @@ export function Lesson3({ program, lessonId }) {
     <LessonLayout
       lessonId={lessonId}
       program={program}
+      progress={progress}
       left={
         <>
           <p className="mb-5 text-adpt">

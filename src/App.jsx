@@ -1,15 +1,20 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { onAuthStateChanged } from "firebase/auth";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { auth } from "./config/firebase";
+import { auth, db } from "./config/firebase";
 import { clearUser, setUser } from "./actions/userActions";
 import { CoursesPage } from "./pages/CoursesPage";
 import { CoursePage } from "./pages/CoursePage";
 import { LessonPage } from "./pages/LessonPage";
+import { loadProgress } from "./model/loadProgress";
+import { collection, onSnapshot } from "firebase/firestore";
+import { getUserProgress } from "./model/getUserProgress";
 
 export default function App() {
+  const user = useSelector(state => state.user.user);
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -30,6 +35,10 @@ export default function App() {
   ]);
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    loadProgress(user?.email, dispatch);
+  }, [user]);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, user => {

@@ -1,6 +1,6 @@
-export const setUser = (user) => {
+export const setUser = user => {
   return {
-    type: 'SET_USER',
+    type: "SET_USER",
     payload: {
       uid: user.uid,
       email: user.email,
@@ -10,9 +10,9 @@ export const setUser = (user) => {
     },
   };
 };
-  
+
 export const clearUser = () => {
-    return {
-      type: 'CLEAR_USER',
-    };
+  return {
+    type: "CLEAR_USER",
   };
+};
