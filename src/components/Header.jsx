@@ -8,7 +8,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full justify-between mb-5 px-[max(2vw,6px)] py-[vmax(1vw,4px)] h-[max(5vw,60px)] shadow bg-white flex items-center">
+    <div className="w-full justify-between mb-5 px-[max(2vw,20px)] py-[max(1vw,15px)] h-[max(5vw,80px)] shadow bg-white flex items-center">
       <NavPanel />
       <UserProfileCard />
       <ProfileDropDown isOpen={isOpen} onClose={() => setIsOpen(false)} />

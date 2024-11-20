@@ -31,7 +31,7 @@ export function ProfileDropDown({ isOpen, onClose, className }) {
         data-id="modal"
         className={clsx(
           className,
-          `absolute shadow-md rounded-lg right-2 w-40 top-[calc(max(5vw,60px)+0.5rem)] 
+          `absolute shadow-md rounded-lg right-2 w-40 top-[calc(max(5vw,80px)+0.5rem)] 
                 flex flex-col gap-1 p-1 bg-white`
         )}
       >

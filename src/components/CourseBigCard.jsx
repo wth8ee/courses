@@ -20,7 +20,7 @@ export function CourseBigCard({
     >
       {/* Иконка */}
       <div className="w-full flex justify-center mb-4">
-        <div className="w-[max(9vw,90px)] h-[max(9vw,90px)] flex justify-center items-center">
+        <div className="w-[max(9vw,150px)] h-[max(9vw,150px)] flex justify-center items-center">
           {icon}
         </div>
       </div>
