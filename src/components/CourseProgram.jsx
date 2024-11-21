@@ -3,11 +3,16 @@ import { getLessons } from "../model/getLessons";
 import { useNavigate } from "react-router-dom";
 import { CheckMarkIcon } from "../icons/CheckMarkIcon";
 import { LockIcon } from "../icons/LockIcon";
+import { courses } from "../courses/main";
+import { useSelector } from "react-redux";
 
-export function CourseProgram({ program, course, progress, className }) {
+export function CourseProgram({ program, course, progress, className, open }) {
   if (!program?.length) {
     return;
   }
+  const user = useSelector(state => state.user.user);
+  const courseObject = courses[course];
+  const globalUnavailable = courseObject?.unavailable;
 
   const navigate = useNavigate();
 
@@ -33,7 +38,7 @@ export function CourseProgram({ program, course, progress, className }) {
             const lastCompleted = courseProgress?.length
               ? courseProgress?.[courseProgress.length - 1]
               : 0;
-            const unavailable = lastCompleted + 1 < id;
+            const unavailable = lastCompleted + 1 < id || globalUnavailable;
 
             return (
               <div key={i}>
@@ -50,8 +55,10 @@ export function CourseProgram({ program, course, progress, className }) {
                     i == lessons.length - 1 && "rounded-b-lg"
                   )}
                   onClick={() => {
-                    if (!unavailable) {
+                    if (!unavailable && user) {
                       navigate(`/courses/${course}/${id}`);
+                    } else if (!unavailable && !user) {
+                      open();
                     }
                   }}
                 >

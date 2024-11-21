@@ -15,6 +15,7 @@ import { programs } from "./programs";
 export const courses = {
   html: htmlCourse,
   css: {
+    unavailable: true,
     title: "CSS",
     lessons: getLessons(programs.css).length,
     description: `
@@ -32,9 +33,10 @@ export const courses = {
       работать с макетами и адаптивным дизайном, создавать стильные анимации 
       и трансформации. Вы освоите основные принципы CSS, а также узнаете, как 
       добиться кроссбраузерности и мобильной адаптивности.
-    `
+    `,
   },
   javascript: {
+    unavailable: true,
     title: "JavaScript",
     lessons: getLessons(programs.javascript).length,
     description: `
@@ -52,9 +54,10 @@ export const courses = {
       переменными и функциями до взаимодействия с API и манипуляций с DOM. 
       Вы сможете создавать динамичные и интерактивные страницы, которые будут 
       реагировать на действия пользователя, как приложения.
-    `
+    `,
   },
   git: {
+    unavailable: true,
     title: "Git",
     lessons: getLessons(programs.git).length,
     description: `
@@ -72,9 +75,10 @@ export const courses = {
       В этом курсе вы освоите основные команды Git, научитесь работать с репозиториями, 
       ветками и слияниями, а также узнаете, как использовать GitHub для совместной работы 
       над проектами.
-    `
+    `,
   },
   tailwind: {
+    unavailable: true,
     title: "Tailwind",
     lessons: getLessons(programs.tailwind).length,
     description: `
@@ -92,9 +96,10 @@ export const courses = {
       и стильных интерфейсов, улучшая производительность разработки и кодовую читаемость. 
       Вы освоите концепции утилитарных классов и научитесь проектировать интерфейсы 
       с помощью гибких и мощных инструментов Tailwind.
-    `
+    `,
   },
   nodejs: {
+    unavailable: true,
     title: "Node JS",
     lessons: getLessons(programs.nodejs).length,
     description: `
@@ -111,9 +116,10 @@ export const courses = {
       Node.js для создания веб-серверов, API и обработки запросов от клиентов. 
       Вы освоите основы работы с модулями, асинхронность в Node.js и научитесь 
       интегрировать серверное приложение с базами данных и другими сервисами.
-    `
+    `,
   },
   react: {
+    unavailable: true,
     title: "React",
     lessons: getLessons(programs.react).length,
     description: `
@@ -130,9 +136,10 @@ export const courses = {
       а также освоите концепцию хуков для функциональных компонентов. Вы также научитесь работать с маршрутизацией, 
       управлением состоянием с использованием контекста и Redux, и взаимодействием с API для получения данных. 
       По завершению курса вы сможете разрабатывать сложные, отзывчивые веб-приложения с удобным и чистым интерфейсом.
-    `
+    `,
   },
   typescript: {
+    unavailable: true,
     title: "TypeScript",
     lessons: getLessons(programs.typescript).length,
     description: `
@@ -149,9 +156,10 @@ export const courses = {
       В этом курсе вы научитесь основам TypeScript, разберетесь в типах данных, 
       интерфейсах и классах, а также научитесь интегрировать TypeScript в проекты 
       для улучшения стабильности и производительности вашего кода.
-    `
+    `,
   },
   redux: {
+    unavailable: true,
     title: "Redux",
     lessons: getLessons(programs.redux).length,
     description: `
@@ -168,9 +176,10 @@ export const courses = {
       вы узнаете, как использовать Redux для управления состоянием, научитесь работать с 
       экшенами, редьюсерами и стором. Вы сможете создавать масштабируемые и легко тестируемые 
       приложения, где каждое изменение состояния будет отслеживаться и логироваться.
-    `
+    `,
   },
   firebase: {
+    unavailable: true,
     title: "Firebase",
     lessons: getLessons(programs.firebase).length,
     description: `
@@ -188,10 +197,8 @@ export const courses = {
       времени, а также добавления функций аутентификации и авторизации. Вы сможете создавать 
       безопасные и масштабируемые приложения, использующие возможности Firebase для работы 
       с данными и пользователями в реальном времени.
-    `
-  }
+    `,
+  },
 };
 
-
-  export const coursesKeys = Object.keys(courses)
-  
+export const coursesKeys = Object.keys(courses);

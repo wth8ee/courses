@@ -50,6 +50,7 @@ export function CoursesSlider() {
             link={course.link}
             lessons={course.lessons}
             icon={<course.icon className="h-full w-full" />}
+            unavailable={course.unavailable}
           />
         );
       })}

@@ -15,6 +15,7 @@ export default {
         adptlg: "max(2vw,10px)",
         arrow: "calc(2.5rem + max(1vw,10px))",
         adptmd: "max(1.5vw,15px)",
+        adptsm: "max(0.5vw, 5px)",
       },
       fontSize: {
         adptlg: "max(1.8vw,16px)",

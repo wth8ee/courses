@@ -1,8 +1,6 @@
 import { Header } from "../components/Header";
 import { courses } from "../courses/main.js";
 import { CourseBigCard } from "../components/CourseBigCard";
-import { UserProfileCard } from "../components/UserProfileCard";
-import { NavPanel } from "../components/NavPanel";
 
 export function CoursesPage() {
   const coursesKeys = Object.keys(courses);
@@ -25,6 +23,7 @@ export function CoursesPage() {
                 link={course.link}
                 icon={<course.icon className="h-full w-full" />}
                 key={i}
+                unavailable={course.unavailable}
               />
             );
           })}

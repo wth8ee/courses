@@ -7,11 +7,18 @@ import { courses } from "../courses/main.js";
 import { CourseProgram } from "../components/CourseProgram.jsx";
 import { programs } from "../courses/programs.js";
 import { useSelector } from "react-redux";
+import { useState } from "react";
+import { Modal } from "../components/Modal.jsx";
 
 export function CoursePage() {
   const params = useParams();
   const key = params.course;
   const course = courses[key];
+  const user = useSelector(state => state.user.user);
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const open = () => setIsOpen(true);
 
   const progress = useSelector(state => state.progress?.progress)?.progress;
 
@@ -19,14 +26,27 @@ export function CoursePage() {
     <div className="w-full flex flex-col items-center">
       <Header />
       <main className="flex w-[max(90vw,300px)] flex-col items-center gap-10 mb-5">
-        <CoursePreview course={course} progress={progress} courseKey={key} />
+        <CoursePreview
+          course={course}
+          progress={progress}
+          courseKey={key}
+          open={open}
+        />
         <CourseProgram
           className="w-[max(50%,300px)] self-start"
           program={programs[key]}
           course={key}
           progress={progress}
+          open={open}
         />
       </main>
+      <Modal
+        className="auth-error-modal"
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      >
+        Авторизируйтесь для продолжения
+      </Modal>
     </div>
   );
 }
