@@ -47,7 +47,7 @@ export function CoursePreview({ course, progress, courseKey, open }) {
 
   return (
     <div
-      className={`w-full flex bg-white shadow 
+      className={`w-full flex bg-layout shadow 
         p-adptxl rounded-xl gap-adptxl items-center`}
     >
       <div className="min-w-[max(50%,300px)]">
@@ -59,10 +59,10 @@ export function CoursePreview({ course, progress, courseKey, open }) {
           )}
           {course.title} - Бесплатный курс
         </div>
-        <div className="text-adptmd text-gray-600 mb-adptlg">
+        <div className="text-adptmd text-ct6 mb-adptlg">
           {course.largeDescription}
         </div>
-        <div className="text-adptmd text-gray-500 mb-adptxl font-light">
+        <div className="text-adptmd text-ct5 mb-adptxl font-light">
           {course.lessons} {lesson} с практикой в браузере
         </div>
         <Button disabled={course?.unavailable} onClick={handleStart}>

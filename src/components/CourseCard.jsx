@@ -15,7 +15,7 @@ export function CourseCard({
       className={clsx(
         className,
         `flex flex-col gap-2 items-center  
-      bg-white shadow p-adpt rounded-lg hover:scale-110 
+      bg-layout shadow p-adpt rounded-lg hover:scale-110 
         transition-transform cursor-pointer whitespace-nowrap`
       )}
     >
@@ -28,7 +28,7 @@ export function CourseCard({
           {icon}
         </div>
       </div>
-      <div className="h-[1px] w-[80%] bg-slate-400" />
+      <div className="h-[1px] w-[80%] bg-ct4" />
       <div className="font-medium text-adptlg mt-adptsm">{title}</div>
       <div className="text-adptmd mb-adptsm">Уроков: {lessons}</div>
       <div>

@@ -1,3 +1,7 @@
+import { ReactIcon } from "../../icons/ReactIcon";
+import { getLessons } from "../../model/getLessons";
+import { programs } from "../programs";
+
 export const reactCourse = {
   unavailable: true,
   title: "React",

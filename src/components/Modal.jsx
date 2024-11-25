@@ -23,8 +23,8 @@ export function Modal({ isOpen, onClose, className, children }) {
         data-id="modal"
         className={clsx(
           className,
-          `bg-red-400 w-[max(300px,40%)] p-adpt h-[calc(max(2vw,10px)+max(1.2vw,12px))] rounded-lg 
-          text-white font-medium text-adptmd flex items-center justify-between opacity-0 mt-adptsm`
+          `bg-red-400 w-[max(300px,40%)] p-adpt min-h-[40px] h-[calc(max(2vw,10px)+max(1.2vw,12px))] rounded-lg 
+          text-background font-medium text-adptmd flex items-center justify-between opacity-0 mt-adptsm`
         )}
       >
         {children}

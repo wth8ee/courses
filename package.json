@@ -18,6 +18,7 @@
     "@reduxjs/toolkit": "^2.3.0",
     "@testing-library/dom": "^10.4.0",
     "@uiw/codemirror-extensions-basic-setup": "^4.23.6",
+    "@uiw/codemirror-theme-aura": "^4.23.6",
     "@uiw/codemirror-theme-vscode": "^4.23.6",
     "@uiw/codemirror-themes": "^4.23.6",
     "@uiw/react-codemirror": "^4.23.6",

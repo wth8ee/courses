@@ -5,11 +5,11 @@ import { Lesson4 } from "./Lesson4";
 import { Lesson5 } from "./Lesson5";
 import { Lesson6 } from "./Lesson6";
 
-export const courseLessons = [
-    Lesson1,
-    Lesson2,
-    Lesson3,
-    Lesson4,
-    Lesson5,
-    Lesson6
-]
+export const htmlLessons = [
+  Lesson1,
+  Lesson2,
+  Lesson3,
+  Lesson4,
+  Lesson5,
+  Lesson6,
+];

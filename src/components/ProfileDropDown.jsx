@@ -32,10 +32,10 @@ export function ProfileDropDown({ isOpen, onClose, className }) {
         className={clsx(
           className,
           `absolute shadow rounded-lg right-2 w-40 top-[calc(max(5vw,80px)+0.5rem)] 
-                flex flex-col gap-1 p-1 bg-white`
+                flex flex-col gap-[1px] bg-layout`
         )}
       >
-        <DropDownOption title="Profile" onClick={() => navigate("/profile")} />
+        <DropDownOption title="Profile" />
         <DropDownOption title="Settings" />
         <DropDownOption onClick={logOut} title="Log out" />
       </div>
@@ -46,15 +46,17 @@ export function ProfileDropDown({ isOpen, onClose, className }) {
 }
 
 function DropDownOption({ icon, title, onClick }) {
+  const theme = useSelector(state => state.theme.theme);
+  const classes =
+    theme == "light"
+      ? `text-slate-900 flex w-full items-center rounded-md 
+    px-2 py-2 gap-2 cursor-pointer transition-colors text-adpt
+    bg-white hover:text-white hover:bg-blue-500`
+      : `text-slate-400 flex w-full items-center rounded-md 
+    px-2 py-2 gap-2 cursor-pointer transition-colors text-adpt
+    bg-slate-900 hover:text-white hover:bg-blue-500`;
   return (
-    <div
-      onClick={onClick}
-      className={clsx(
-        `text-gray-900 flex w-full items-center rounded-md 
-        px-2 py-2 gap-2 cursor-pointer transition-colors`,
-        "bg-white hover:text-white hover:bg-blue-500"
-      )}
-    >
+    <div onClick={onClick} className={classes}>
       {icon && icon}
       {title}
     </div>

@@ -1,5 +1,7 @@
-import { courseLessons } from "./html/lessons/lessons";
+import { htmlLessons } from "./html/lessons/lessons";
+import { reactLessons } from "./react/lessons/lessons";
 
 export const lessons = {
-    html: courseLessons
-}
+  html: htmlLessons,
+  react: reactLessons,
+};

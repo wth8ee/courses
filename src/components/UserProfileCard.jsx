@@ -5,9 +5,6 @@ import { useEffect, useState } from "react";
 import { signInWithPopup, signInWithRedirect } from "firebase/auth";
 import { auth, db, googleProvider } from "../config/firebase";
 import { Button } from "./Button";
-import { addDoc, collection } from "firebase/firestore";
-import { getUserProgress } from "../model/getUserProgress";
-import { setProgress } from "../actions/progressActions";
 
 export function UserProfileCard({ className }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +17,7 @@ export function UserProfileCard({ className }) {
   return (
     <div className={`${className} relative`}>
       <div
-        className="cursor-pointer flex items-center gap-2"
+        className="cursor-pointer flex items-center gap-adpt"
         onClick={() => setIsOpen(!isOpen)}
       >
         {user && (
@@ -29,9 +26,7 @@ export function UserProfileCard({ className }) {
             onClick={() => setIsOpen(true)}
           />
         )}
-        <div className="text-sm font-medium text-slate-700">
-          {user && user.displayName}
-        </div>
+        <div className="text-sm text-ct6">{user && user.displayName}</div>
       </div>
 
       {user && isOpen && (

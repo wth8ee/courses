@@ -10,7 +10,7 @@ export function CourseProgramExample({ className }) {
 
   const allLessons = getLessons(program);
   return (
-    <div className={clsx(className, "bg-slate-50")}>
+    <div className={clsx(className, "bg-background")}>
       {program?.map((block, i) => {
         if (i == 5) {
           return <ProgramBlock block={block} key={i} />;
@@ -40,11 +40,10 @@ export function CourseProgramExample({ className }) {
                   key={i}
                   className={clsx(
                     isCompleted && "text-green-600 hover:text-green-500",
-                    unavailable &&
-                      "text-gray-400 hover:text-gray-400 cursor-not-allowed",
-                    "p-[max(0.8vw,8px)] w-full flex items-center gap-[max(1vw,10px)] justify-between bg-white text-adptsm transition-colors",
+                    unavailable && "text-ct4 hover:text-ct4 cursor-not-allowed",
+                    "p-[max(0.8vw,8px)] w-full flex items-center gap-[max(1vw,10px)] justify-between bg-layout text-adptsm transition-colors",
                     !unavailable && "cursor-pointer",
-                    !isCompleted && !unavailable && "hover:text-slate-600",
+                    !isCompleted && !unavailable && "hover:text-ct6",
                     i == 0 && "rounded-t-lg",
                     i == lessons.length - 1 && "rounded-b-lg"
                   )}
@@ -59,7 +58,7 @@ export function CourseProgramExample({ className }) {
                     <CheckMarkIcon className="h-[max(0.8vw,8px)] w-[max(0.8vw,8px)]" />
                   )}
                   {unavailable && (
-                    <LockIcon className="text-gray-800 h-[max(0.8vw,8px)] w-[max(0.8vw,8px)]" />
+                    <LockIcon className="text-ct5 h-[max(0.8vw,8px)] w-[max(0.8vw,8px)]" />
                   )}
                 </div>
               </div>

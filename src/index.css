@@ -2,6 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
+.light {
+  --background: #f1f5f9;
+  --layout: #ffffff;
+  --opposite: #000000;
+  --ct1: #f1f5f9;
+  --ct2: #e2e8f0;
+  --ct3: #cbd5e1;
+  --ct4: #94a3b8;
+  --ct5: #64748b;
+  --ct6: #475569;
+  --ct7: #334155;
+  --ct8: #1e293b;
+  --ct9: #0f172a;
+}
+
+.dark {
+  --background: #000000;
+  --layout: rgb(15, 23, 42);
+  --opposite: #ffffff;
+  --ct9: #f1f5f9;
+  --ct8: #e2e8f0;
+  --ct7: #cbd5e1;
+  --ct6: #94a3b8;
+  --ct5: #64748b;
+  --ct4: #475569;
+  --ct3: #334155;
+  --ct2: #1e293b;
+  --ct1: #0f172a;
+  color: var(--ct8);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #64748b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
+
 html {
   overflow-x: hidden;
   overflow-y: auto;

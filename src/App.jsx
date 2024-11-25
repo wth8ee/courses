@@ -11,9 +11,12 @@ import { LessonPage } from "./pages/LessonPage";
 import { loadProgress } from "./model/loadProgress";
 import { collection, onSnapshot } from "firebase/firestore";
 import { getUserProgress } from "./model/getUserProgress";
+import clsx from "clsx";
+import { setTheme } from "./actions/themeActions";
 
 export default function App() {
   const user = useSelector(state => state.user.user);
+  const theme = useSelector(state => state.theme.theme);
 
   const router = createBrowserRouter([
     {
@@ -37,6 +40,11 @@ export default function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    const theme = localStorage.getItem("theme");
+    dispatch(setTheme(theme));
+  }, []);
+
+  useEffect(() => {
     loadProgress(user?.email, dispatch);
   }, [user]);
 
@@ -52,7 +60,12 @@ export default function App() {
   }, []);
 
   return (
-    <div className="w-screen min-h-screen bg-slate-100 overflow-x-hidden overflow-y-auto">
+    <div
+      className={clsx(
+        "w-screen min-h-screen bg-background overflow-x-hidden overflow-y-auto",
+        theme
+      )}
+    >
       <RouterProvider router={router} />
     </div>
   );

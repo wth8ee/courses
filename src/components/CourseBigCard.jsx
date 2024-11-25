@@ -16,7 +16,7 @@ export function CourseBigCard({
       className={clsx(
         className,
         `flex flex-col gap-4 items-center 
-        bg-white shadow p-6 rounded-lg justify-between 
+        bg-layout shadow p-6 rounded-lg justify-between 
         transition-transform cursor-pointer max-w-xs`
       )}
     >
@@ -27,16 +27,14 @@ export function CourseBigCard({
           </div>
         </div>
 
-        <div className="h-[1px] w-[80%] bg-slate-400 mb-4" />
+        <div className="h-[1px] w-[80%] bg-ct4 mb-4" />
 
         <div className="font-medium text-2xl text-center mb-2">{title}</div>
 
-        <div className="text-md text-gray-700 mb-2">Уроков: {lessons}</div>
+        <div className="text-md text-ct7 mb-2">Уроков: {lessons}</div>
 
         {description && (
-          <p className="text-sm text-gray-600 mb-4 text-center">
-            {description}
-          </p>
+          <p className="text-sm text-ct6 mb-4 text-center">{description}</p>
         )}
       </div>
 

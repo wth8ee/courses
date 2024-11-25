@@ -19,6 +19,8 @@ export function CourseProgram({ program, course, progress, className, open }) {
   const allLessons = getLessons(program);
   const courseProgress = progress?.[course];
 
+  console.log(courseProgress);
+
   return (
     <div className={clsx(className, "flex flex-col gap-5")}>
       {program?.map((block, i) => {
@@ -46,11 +48,10 @@ export function CourseProgram({ program, course, progress, className, open }) {
                   key={i}
                   className={clsx(
                     isCompleted && "text-green-600 hover:text-green-500",
-                    unavailable &&
-                      "text-gray-400 hover:text-gray-400 cursor-not-allowed",
-                    "p-[max(1.5vw,10px)] flex items-center justify-between bg-white text-adptmd transition-colors",
+                    unavailable && "text-ct4 hover:text-ct4 cursor-not-allowed",
+                    "p-[max(1.5vw,10px)] flex items-center justify-between bg-layout text-adptmd transition-colors",
                     !unavailable && "cursor-pointer",
-                    !isCompleted && !unavailable && "hover:text-slate-600",
+                    !isCompleted && !unavailable && "hover:text-ct6",
                     i == 0 && "rounded-t-lg",
                     i == lessons.length - 1 && "rounded-b-lg"
                   )}
@@ -72,7 +73,7 @@ export function CourseProgram({ program, course, progress, className, open }) {
                     <CheckMarkIcon className="h-[max(1.2vw,12px)] w-[max(1.2vw,12px)]" />
                   )}
                   {unavailable && (
-                    <LockIcon className="text-gray-800 h-[max(1.2vw,12px)] w-[max(1.2vw,12px)]" />
+                    <LockIcon className="text-ct5 h-[max(1.2vw,12px)] w-[max(1.2vw,12px)]" />
                   )}
                 </div>
               </div>

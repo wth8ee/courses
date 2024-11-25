@@ -4,7 +4,7 @@ export function NextArrow(props) {
   const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
-      <ChevronRightIcon className="w-10 text-black" />
+      <ChevronRightIcon className="w-10 text-opposite" />
     </div>
   );
 }
