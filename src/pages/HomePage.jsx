@@ -29,7 +29,7 @@ export function HomePage() {
             content={<CourseProgramExample />}
           />
           <MainFrame
-            className="mt-10"
+            className="my-10"
             title="2. Проходите уроки"
             description={`В каждом курсе уроки доступны для прохождения строго по порядку. В
               каждом уроке кратко изложена вся необходимая информация, которая

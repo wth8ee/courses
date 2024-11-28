@@ -6,8 +6,9 @@ import { vscodeDark } from "@uiw/codemirror-theme-vscode";
 import { useSelector } from "react-redux";
 import { aura, auraInit } from "@uiw/codemirror-theme-aura";
 import { javascript } from "@codemirror/lang-javascript";
+import { quietlight, quietlightInit } from "@uiw/codemirror-theme-quietlight";
 
-export function CodeWindow({ code, className, onChange }) {
+export function CodeWindow({ code, className, onChange, jsx }) {
   const theme = useSelector(state => state.theme.theme);
   return (
     <div
@@ -19,10 +20,15 @@ export function CodeWindow({ code, className, onChange }) {
       <CodeMirror
         onChange={onChange}
         value={code}
-        extensions={javascript({ jsx: true })}
+        extensions={jsx ? javascript({ jsx: true }) : html()}
         theme={
           theme == "light"
-            ? vscodeLight
+            ? quietlightInit({
+                settings: {
+                  background: "#ffffff",
+                  gutterBackground: "#ffffff",
+                },
+              })
             : auraInit({
                 settings: {
                   background: "#0f172a",

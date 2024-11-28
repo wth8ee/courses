@@ -1,5 +1,5 @@
 const initialState = {
-  theme: "dark",
+  theme: "light",
 };
 
 export function themeReducer(state = initialState, action) {

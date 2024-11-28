@@ -64,7 +64,7 @@ ReactDOM.render(<App />, document.getElementById('root'));`;
 
           <p className="mb-5 text-adpt">Пример простого компонента в React:</p>
 
-          <CodeExample code={value} className="mb-5" />
+          <CodeExample code={value} className="mb-5" jsx />
 
           <div>
             <p className="mb-2">В этом примере:</p>

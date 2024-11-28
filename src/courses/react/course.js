@@ -3,7 +3,7 @@ import { getLessons } from "../../model/getLessons";
 import { programs } from "../programs";
 
 export const reactCourse = {
-  unavailable: true,
+  unavailable: false,
   title: "React",
   lessons: getLessons(programs.react).length,
   description: `
