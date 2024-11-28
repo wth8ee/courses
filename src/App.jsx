@@ -41,7 +41,11 @@ export default function App() {
 
   useEffect(() => {
     const theme = localStorage.getItem("theme");
-    dispatch(setTheme(theme));
+    if (theme) {
+      dispatch(setTheme(theme));
+    } else {
+      dispatch(setTheme("light"));
+    }
   }, []);
 
   useEffect(() => {

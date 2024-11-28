@@ -24,6 +24,15 @@ export function CoursesSlider() {
     return n;
   }
 
+  const coursesObj = [];
+  for (let key of coursesKeys) {
+    coursesObj.push(courses[key]);
+  }
+
+  console.log(coursesObj);
+
+  coursesObj.sort((a, b) => a.unavailable - b.unavailable);
+
   const settings = {
     infinite: true,
     slidesToShow: slidesNumber,
@@ -39,8 +48,7 @@ export function CoursesSlider() {
 
   return (
     <Slider {...settings}>
-      {coursesKeys.map((key, i) => {
-        const course = courses[key];
+      {coursesObj.map((course, i) => {
         return (
           <CourseCard
             key={i}
