@@ -21,7 +21,6 @@ export function LessonLayout({
 }) {
   const [userCode, setUserCode] = useState(code || "");
   const user = useSelector(state => state.user.user);
-  const theme = useSelector(state => state.theme.theme);
 
   const lessons = getLessons(program);
   const lesson = lessons[lessonId - 1];

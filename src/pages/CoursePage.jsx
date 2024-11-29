@@ -14,7 +14,6 @@ export function CoursePage() {
   const params = useParams();
   const key = params.course;
   const course = courses[key];
-  const user = useSelector(state => state.user.user);
 
   const [isOpen, setIsOpen] = useState(false);
 

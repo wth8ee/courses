@@ -8,6 +8,7 @@ export function Button({
   className,
   disabled,
   onClick,
+  lg,
   to,
 }) {
   const type = outline
@@ -23,7 +24,7 @@ export function Button({
   return (
     <button
       onClick={to ? () => navigate(to) : onClick}
-      className={clsx(className, buttonClasses[type])}
+      className={clsx(className, lg && "text-adptlg", buttonClasses[type])}
       disabled={disabled}
     >
       {children}

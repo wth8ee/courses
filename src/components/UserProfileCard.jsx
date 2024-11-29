@@ -5,14 +5,11 @@ import { useEffect, useState } from "react";
 import { signInWithPopup, signInWithRedirect } from "firebase/auth";
 import { auth, db, googleProvider } from "../config/firebase";
 import { Button } from "./Button";
+import { signInWithGoogle } from "../model/signInWithGoogle";
 
 export function UserProfileCard({ className }) {
   const [isOpen, setIsOpen] = useState(false);
   const user = useSelector(state => state.user.user);
-
-  async function signInWithGoogle() {
-    await signInWithPopup(auth, googleProvider);
-  }
 
   return (
     <div className={`${className} relative`}>
