@@ -6,6 +6,7 @@ import { useState } from "react";
 import { courses, coursesKeys } from "../courses/main.js";
 import { NextArrow } from "./NextArrow";
 import { PrevArrow } from "./PrevArrow";
+import clsx from "clsx";
 
 export function CoursesSlider() {
   const [slidesNumber, setSlidesNumber] = useState(getSlidesNumber());
@@ -29,8 +30,6 @@ export function CoursesSlider() {
     coursesObj.push(courses[key]);
   }
 
-  console.log(coursesObj);
-
   coursesObj.sort((a, b) => a.unavailable - b.unavailable);
 
   const settings = {
@@ -52,7 +51,7 @@ export function CoursesSlider() {
         return (
           <CourseCard
             key={i}
-            className="my-5"
+            className={clsx("my-5", course.unavailable && "opacity-50")}
             title={course.title}
             description={course.description}
             link={course.link}
