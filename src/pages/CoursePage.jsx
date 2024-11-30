@@ -24,7 +24,7 @@ export function CoursePage() {
   return (
     <div className="w-full flex flex-col items-center">
       <Header />
-      <main className="flex w-[max(90vw,300px)] flex-col items-center gap-10 mb-5">
+      <main className="flex w-[max(90vw,300px)] flex-col items-center gap-10 my-10">
         <CoursePreview
           course={course}
           progress={progress}

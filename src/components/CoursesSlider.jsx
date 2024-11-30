@@ -51,7 +51,7 @@ export function CoursesSlider() {
         return (
           <CourseCard
             key={i}
-            className={clsx("my-5", course.unavailable && "opacity-50")}
+            className={clsx("my-5", course.unavailable && "op")}
             title={course.title}
             description={course.description}
             link={course.link}

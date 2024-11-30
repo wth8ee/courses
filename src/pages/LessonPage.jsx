@@ -18,7 +18,8 @@ export function LessonPage() {
   const courseLessons = lessons?.[course];
   const Lesson = courseLessons?.[lessonId - 1];
 
-  const lessonAccess = progress?.[course]?.includes(Number(lessonId) - 1);
+  const lessonAccess =
+    progress?.[course]?.includes(Number(lessonId) - 1) || lessonId == 1;
 
   let warning = null;
   if (!user) {

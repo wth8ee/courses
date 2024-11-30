@@ -1,7 +1,15 @@
 import { LessonLayout } from "../../../components/LessonLayout";
 import { CodeExample } from "../../../components/CodeExample";
+import React, { useEffect, useState } from "react";
+import ReactDOM, { createRoot } from "react-dom/client";
+import { transform } from "@babel/standalone";
+import { useSelector } from "react-redux";
+import { getElements } from "../../../model/getElements";
+import { delay } from "../../../model/delay";
 
 export function Lesson1({ program, lessonId, progress }) {
+  const [root, setRoot] = useState(null);
+
   const value = `import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -13,13 +21,36 @@ function App() {
 // Рендерим компонент в DOM
 ReactDOM.render(<App />, document.getElementById('root'));`;
 
-  const test = () => {
-    const root = document.getElementById("compiler");
-    return root && root.innerHTML === "<h1>Я учу реакт</h1>";
+  const test = async code => {
+    try {
+      const compiler = document.getElementById("compiler");
+      if (root) {
+        root.unmount();
+        setRoot(null);
+      }
+
+      compiler.innerHTMl = "";
+      const transformedCode = transform(code, { presets: ["react"] }).code;
+
+      const Component = eval(`(${transformedCode})`);
+
+      if (typeof Component === "function") {
+        const newRoot = createRoot(compiler);
+        setRoot(newRoot);
+        newRoot.render(<Component React={React} />);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+
+    await delay(50);
+    const elem = compiler.children?.[0];
+    return elem?.tagName == "H1" && elem?.textContent == "Я учу реакт";
   };
 
   return (
     <LessonLayout
+      redux
       lessonId={lessonId}
       program={program}
       progress={progress}
@@ -101,7 +132,7 @@ ReactDOM.render(<App />, document.getElementById('root'));`;
         <>
           <p className="mb-2">
             Создайте компонент ILearnReact, который возвращает заголовок первого
-            уровня с сообщением "Я учу реакт"
+            уровня с сообщением "Я учу реакт". Рендерить его не нужно.
           </p>
         </>
       }

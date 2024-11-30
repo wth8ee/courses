@@ -109,3 +109,7 @@ html {
 .auth-error-modal {
   animation: show 100ms linear forwards;
 }
+
+.op {
+  opacity: 0.5;
+}

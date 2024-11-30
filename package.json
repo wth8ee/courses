@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@babel/standalone": "^7.26.2",
     "@codemirror/basic-setup": "^0.20.0",
     "@codemirror/lang-html": "^6.4.9",
     "@codemirror/theme-one-dark": "^6.1.2",
@@ -23,6 +24,7 @@
     "@uiw/codemirror-theme-vscode": "^4.23.6",
     "@uiw/codemirror-themes": "^4.23.6",
     "@uiw/react-codemirror": "^4.23.6",
+    "babel": "^5.8.38",
     "bootstrap": "^5.3.3",
     "chai": "^5.1.2",
     "clsx": "^2.1.1",

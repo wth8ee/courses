@@ -9,8 +9,10 @@ import { courses } from "../courses/main.js";
 import { updateProgress } from "../model/updateProgress.js";
 import { useDispatch, useSelector } from "react-redux";
 import { ReactCompiler } from "./ReactCompiler.jsx";
+import { setCode } from "../actions/codeActions.js";
 
 export function LessonLayout({
+  redux,
   test,
   left,
   code,
@@ -19,8 +21,8 @@ export function LessonLayout({
   lessonId,
   progress,
 }) {
-  const [userCode, setUserCode] = useState(code || "");
   const user = useSelector(state => state.user.user);
+  const [userCode, setUserCode] = useState(code || "");
 
   const lessons = getLessons(program);
   const lesson = lessons[lessonId - 1];
@@ -48,8 +50,9 @@ export function LessonLayout({
     navigate(`/courses/${course}/${+lessonId - 1}`);
   };
 
-  const check = () => {
-    if (test()) {
+  const check = async () => {
+    const testPassed = await test(userCode);
+    if (testPassed) {
       setCompleted(true);
       if (user) {
         updateProgress(user.email, course, lessonId, dispatch);
@@ -92,6 +95,7 @@ export function LessonLayout({
       </div>
       <div className="w-[max(50%,400px)] min-h-[500px] flex flex-col gap-5 flex-grow bg-layout shadow rounded-lg p-5 overflow-y-auto mb-5 lg:mb-0">
         <CodeWindow
+          jsx={course == "react"}
           code={userCode}
           onChange={handleChange}
           className="w-full min-h-[300px] max-h-[max(50vw,500px)] overflow-y-auto flex-grow"
