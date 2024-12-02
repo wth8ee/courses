@@ -60,69 +60,76 @@ ReactDOM.render(<App />, document.getElementById('root'));`;
       progress={progress}
       left={
         <>
-          <p className="mb-5 text-adpt">
-            Для начала работы с React необходимо установить соответствующие
-            инструменты и настроить окружение. В этом уроке мы рассмотрим, как
-            настроить окружение для разработки на React.
+          <p className="text-adpt mb-5">
+            Прежде чем приступить к написанию кода на React, необходимо
+            настроить окружение для разработки. Это включает в себя установку
+            редактора кода, настроек для работы с Node.js, npm (или yarn), и
+            инструментов для быстрого старта проекта на React. В этом уроке мы
+            подробно рассмотрим, как настроить все необходимое для работы с
+            React, используя популярные инструменты и практики.
           </p>
-
-          <p className="mb-5 text-adpt">
-            Для начала нам нужно установить Node.js и менеджер пакетов npm или
-            yarn. Node.js — это среда для выполнения JavaScript-кода вне
-            браузера, а npm (или yarn) позволяет устанавливать необходимые
-            пакеты для проекта.
-          </p>
-
-          <p className="mb-5 text-adpt">Шаги для установки:</p>
-
-          <ul className="list-disc ml-5 mb-5">
+          <ol className="text-adpt list-decimal list-ul flex flex-col gap-5">
             <li>
-              Скачайте и установите Node.js с официального сайта:
-              https://nodejs.org/.
+              <p className="mb-5">
+                <p className="mb-2 hl">Выбор редактора кода</p>
+                Для начала работы с React нам понадобится редактор кода. Мы
+                рекомендуем использовать Visual Studio Code (VS Code) — это
+                мощный и удобный редактор, который имеет множество расширений
+                для работы с JavaScript и React.
+              </p>
+              <ul className="list-disc ml-[20px]">
+                <li>
+                  <p className="mb-5">
+                    <span className="hl">Установка VS Code:</span> Перейдите на
+                    официальный сайт VS Code и скачайте версию для вашей
+                    операционной системы.
+                  </p>
+                </li>
+                <li>
+                  <p className="mb-2 hl">
+                    Основные расширения для работы с React:
+                  </p>
+                  <ul className="list-disc ml-[20px] flex flex-col gap-1">
+                    <li>ESLint — для статической проверки кода.</li>
+                    <li>Prettier — для форматирования кода.</li>
+                    <li>
+                      Reactjs Code Snippets — для быстрого написания шаблонов
+                      React-компонентов.
+                    </li>
+                    <li>
+                      Bracket Pair Colorizer — для улучшения визуализации
+                      скобок.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
             </li>
             <li>
-              После установки Node.js в командной строке будет доступна утилита{" "}
-              <code>npm</code>, которая используется для установки пакетов.
+              <p className="mb-5">
+                <p className="mb-2 hl">Установка Node.js и npm</p>
+                Для работы с React необходимо установить Node.js — это среда для
+                выполнения JavaScript на серверной стороне. С Node.js также
+                поставляется менеджер пакетов npm (или альтернативно, yarn),
+                который используется для установки библиотек и инструментов.
+              </p>
+              <ul className="list-decimal ml-[20px] flex flex-col gap-5">
+                <li>
+                  <span className="hl">Установка Node.js:</span> Перейдите на
+                  официальный сайт Node.js, скачайте и установите LTS-версию.
+                </li>
+                <li>
+                  <p className="mb-5">
+                    <span className="hl">Проверка установки:</span> После
+                    установки откройте командную строку и введите команды:
+                  </p>
+                  <CodeExample
+                    code={`node -v
+npm -v`}
+                  />
+                </li>
+              </ul>
             </li>
-            <li>
-              Если вы хотите использовать yarn, установите его с помощью
-              команды: <code>npm install --global yarn</code>.
-            </li>
-          </ul>
-
-          <p className="mb-5 text-adpt">
-            После установки Node.js и npm или yarn вы можете создать новый
-            проект с помощью команды <code>npx create-react-app my-app</code>,
-            которая автоматически установит все необходимые зависимости для
-            работы с React.
-          </p>
-
-          <p className="mb-5 text-adpt">
-            Пример кода для приложения после установки:
-          </p>
-
-          <CodeExample code={value} className="mb-5" jsx />
-
-          <div>
-            <p className="mb-2">В этом примере:</p>
-            <ul className="list-disc ml-5 mb-5">
-              <li>Мы установили React и ReactDOM с помощью npm (или yarn).</li>
-              <li>
-                Создали компонент <code>App</code>, который выводит сообщение,
-                подтверждающее успешную настройку окружения.
-              </li>
-              <li>
-                Используем метод <code>ReactDOM.render</code> для отображения
-                компонента в элементе с id <code>root</code> на странице.
-              </li>
-            </ul>
-          </div>
-
-          <p className="mb-5 text-adpt">
-            Это базовая настройка, с которой начинается работа над проектом на
-            React. В следующих уроках мы подробнее рассмотрим, как строить
-            компоненты и работать с состоянием.
-          </p>
+          </ol>
         </>
       }
       task={

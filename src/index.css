@@ -33,6 +33,29 @@
   color: var(--ct8);
 }
 
+.list-ul {
+  list-style: decimal;
+  margin-left: 20px;
+}
+
+.list-ol {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.list-ol::marker {
+  color: var(--opposite);
+}
+
+.list-ul::marker {
+  color: var(--opposite);
+}
+
+.hl {
+  color: var(--opposite);
+  font-weight: 500;
+}
+
 ::-webkit-scrollbar {
   width: 12px;
 }

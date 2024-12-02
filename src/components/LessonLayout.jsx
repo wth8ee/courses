@@ -82,14 +82,16 @@ export function LessonLayout({
   return (
     <div className="w-full h-full flex gap-5 lg:flex-nowrap flex-wrap">
       <div className="w-[max(50%,400px)] flex-grow bg-layout rounded-lg flex flex-col shadow p-5 overflow-y-auto">
-        <div className="mb-2 text-adptmd text-ct5">
+        <div className="mb-2 text-adptmd text-ct7">
           <a className="cursor-pointer underline" href={courses[course]?.link}>
             {courses[course]?.title}
           </a>{" "}
           - {lessonId}/{courses[course]?.lessons}
         </div>
-        <h1 className="text-adptxl text-ct7 font-medium mb-5 mt-0">{lesson}</h1>
-        <div className="text-ct6">{left}</div>
+        <h1 className="text-adptxl text-opposite font-medium mb-5 mt-0">
+          {lesson}
+        </h1>
+        <div className="text-ct7">{left}</div>
         <h2 className="text-adptxl text-ct7 font-medium mb-5">Задание</h2>
         <div className="text-ct6">{task}</div>
       </div>
