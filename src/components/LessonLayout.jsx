@@ -13,6 +13,7 @@ import { setCode } from "../actions/codeActions.js";
 import { CodingTaskArea } from "./CodingTaskArea.jsx";
 import { TestTask } from "./TestTask.jsx";
 import { getUserProgress } from "../model/getUserProgress.js";
+import clsx from "clsx";
 
 export function LessonLayout({
   test,
@@ -133,7 +134,12 @@ export function LessonLayout({
         <h2 className="text-adptxl text-ct7 font-medium mb-5">Задание</h2>
         <div className="text-ct6">{task}</div>
       </div>
-      <div className="w-[max(50%,400px)] min-h-[500px] flex flex-col gap-5 flex-grow bg-layout shadow rounded-lg p-5 overflow-y-auto mb-5 lg:mb-0">
+      <div
+        className={clsx(
+          "w-[max(50%,400px)] min-h-[500px] flex flex-col gap-5 flex-grow bg-layout shadow rounded-lg p-5 mb-5 lg:mb-0",
+          typeof test == "object" ? "overflow-hidden" : "overflow-y-auto"
+        )}
+      >
         {(typeof test == "function" || !test) && (
           <CodingTaskArea
             userCode={userCode}

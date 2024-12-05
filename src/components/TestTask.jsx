@@ -6,7 +6,7 @@ export function TestTask({ test, reset }) {
   return (
     <div
       id="test"
-      className="w-full flex flex-col gap-10 outline outline-[1px] outline-ct3 p-2 rounded-lg"
+      className="w-full flex flex-col gap-10 outline overflow-y-auto outline-[1px] outline-ct3 p-2 rounded-lg"
     >
       {test?.map((el, i) => (
         <div key={i} className="flex flex-col gap-5 w-full items-start">
@@ -15,12 +15,15 @@ export function TestTask({ test, reset }) {
             {el?.options?.map((option, i) => (
               <div key={i} className="flex gap-2">
                 <input
+                  className="radio"
                   onChange={reset}
                   type="radio"
                   id={option}
                   name={el.question}
                 ></input>
-                <label htmlFor={option}>{option}</label>
+                <label className="radio" htmlFor={option}>
+                  {option}
+                </label>
               </div>
             ))}
           </div>

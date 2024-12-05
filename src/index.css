@@ -33,6 +33,10 @@
   color: var(--ct8);
 }
 
+:root {
+  --blue500: rgb(59, 130, 246);
+}
+
 .hl {
   color: var(--ct7);
   font-weight: 500;
@@ -135,4 +139,36 @@ html {
 
 .op {
   opacity: 0.5;
+}
+
+input.radio {
+  display: none;
+}
+
+label.radio {
+  margin-left: 1.5rem;
+  position: relative;
+  cursor: pointer;
+}
+
+label.radio::before {
+  position: absolute;
+  content: "";
+  outline: 1px solid var(--ct7);
+  width: 1rem;
+  height: 1rem;
+  left: -1.5rem;
+  border-radius: 10%;
+  cursor: pointer;
+  transition: all 100ms linear;
+  box-sizing: border-box;
+  border: 0.2rem solid var(--layout);
+}
+
+.light input.radio:checked + label::before {
+  background-color: rgba(0, 155, 255, 0.5);
+}
+
+.dark input.radio:checked + label::before {
+  background-color: rgba(0, 155, 255, 0.8);
 }
