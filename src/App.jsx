@@ -13,6 +13,7 @@ import { collection, onSnapshot } from "firebase/firestore";
 import { getUserProgress } from "./model/getUserProgress";
 import clsx from "clsx";
 import { setTheme } from "./actions/themeActions";
+import { extractComponent } from "./model/extractComponent";
 
 export default function App() {
   const user = useSelector(state => state.user.user);

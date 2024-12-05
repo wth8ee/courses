@@ -19,8 +19,6 @@ export function CourseProgram({ program, course, progress, className, open }) {
   const allLessons = getLessons(program);
   const courseProgress = progress?.[course];
 
-  console.log(courseProgress);
-
   return (
     <div className={clsx(className, "flex flex-col gap-5")}>
       {program?.map((block, i) => {

@@ -10,9 +10,11 @@ import { updateProgress } from "../model/updateProgress.js";
 import { useDispatch, useSelector } from "react-redux";
 import { ReactCompiler } from "./ReactCompiler.jsx";
 import { setCode } from "../actions/codeActions.js";
+import { CodingTaskArea } from "./CodingTaskArea.jsx";
+import { TestTask } from "./TestTask.jsx";
+import { getUserProgress } from "../model/getUserProgress.js";
 
 export function LessonLayout({
-  redux,
   test,
   left,
   code,
@@ -51,10 +53,42 @@ export function LessonLayout({
   };
 
   const check = async () => {
-    const testPassed = await test(userCode);
+    let testPassed;
+    if (typeof test == "function") {
+      testPassed = await test(userCode);
+    } else if (typeof test == "object") {
+      const answerKeys = [];
+      const answers = [];
+      const userAnswers = [];
+      for (let elem of test) {
+        answerKeys.push(elem?.answer);
+      }
+      for (let i in test) {
+        answers.push(test?.[i]?.options?.[answerKeys?.[i]]);
+      }
+      const testTaskElement = document.getElementById("test");
+      const radios = testTaskElement.querySelectorAll("input[type=radio]");
+      for (let radio of radios) {
+        if (radio.checked) {
+          userAnswers.push(radio.nextSibling?.textContent);
+        }
+      }
+      let equal = answers.length == userAnswers.length;
+      if (equal) {
+        for (let i in answers) {
+          if (answers[i] != userAnswers?.[i]) {
+            equal = false;
+            break;
+          }
+        }
+      }
+      testPassed = equal;
+    }
     if (testPassed) {
       setCompleted(true);
-      if (user) {
+      const progress = await getUserProgress(user?.email);
+      const courseProgress = progress?.[course];
+      if (user && !courseProgress?.includes(lessonId)) {
         updateProgress(user.email, course, lessonId, dispatch);
       }
     } else {
@@ -73,10 +107,14 @@ export function LessonLayout({
       ? "bg-red-500 hover:bg-red-600 outline-red-500 hover:outline-red-600"
       : "";
 
-  const handleChange = (value, viewDate) => {
-    setUserCode(value);
+  const reset = () => {
     setFailed(false);
     setCompleted(false);
+  };
+
+  const handleChange = (value, viewDate) => {
+    setUserCode(value);
+    reset();
   };
 
   return (
@@ -96,21 +134,14 @@ export function LessonLayout({
         <div className="text-ct6">{task}</div>
       </div>
       <div className="w-[max(50%,400px)] min-h-[500px] flex flex-col gap-5 flex-grow bg-layout shadow rounded-lg p-5 overflow-y-auto mb-5 lg:mb-0">
-        <CodeWindow
-          jsx={course == "react"}
-          code={userCode}
-          onChange={handleChange}
-          className="w-full min-h-[300px] max-h-[max(50vw,500px)] overflow-y-auto flex-grow"
-        />
-        {course == "html" && (
-          <HtmlCompiler
-            code={userCode}
-            className="w-full min-h-[200px] max-h-[max(50vw,500px)] overflow-y-auto flex-grow outline outline-[1px] outline-ct3 p-2 rounded-lg"
+        {(typeof test == "function" || !test) && (
+          <CodingTaskArea
+            userCode={userCode}
+            handleChange={handleChange}
+            course={course}
           />
         )}
-        {course == "react" && (
-          <ReactCompiler className="w-full min-h-[200px] max-h-[max(50vw,500px)] overflow-y-auto flex-grow outline outline-[1px] outline-ct3 p-2 rounded-lg" />
-        )}
+        {typeof test == "object" && <TestTask test={test} reset={reset} />}
         <div className="flex gap-5 justify-center">
           <Button onClick={toPrev} disabled={lessonId < 2} outline>
             Предыдущий
