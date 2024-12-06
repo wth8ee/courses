@@ -24,7 +24,7 @@ export function Header() {
   }
 
   return (
-    <div className="w-full sticky top-0 justify-between mb-5 px-[max(2vw,20px)] py-[max(1vw,15px)] h-[max(5vw,80px)] shadow bg-layout flex items-center">
+    <div className="w-full sticky justify-between mb-5 px-[max(2vw,20px)] py-[max(1vw,15px)] h-[max(5vw,80px)] shadow bg-layout flex items-center top-0">
       <NavPanel />
       <div className="flex gap-8 items-center">
         <div

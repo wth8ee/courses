@@ -88,8 +88,12 @@ export function LessonLayout({
     if (testPassed) {
       setCompleted(true);
       const progress = await getUserProgress(user?.email);
-      const courseProgress = progress?.[course];
-      if (user && !courseProgress?.includes(lessonId)) {
+      const courseProgress = progress?.progress?.[course];
+      if (
+        user &&
+        !courseProgress?.includes(Number(lessonId)) &&
+        !courseProgress?.includes(String(lessonId))
+      ) {
         updateProgress(user.email, course, lessonId, dispatch);
       }
     } else {
