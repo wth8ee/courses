@@ -32,12 +32,12 @@ export function ProfileDropDown({ isOpen, onClose, className }) {
         className={clsx(
           className,
           `absolute shadow rounded-lg right-2 w-40 top-[calc(max(5vw,80px)+0.5rem)] 
-                flex flex-col gap-[1px] bg-layout`
+                flex flex-col gap-1 bg-layout`
         )}
       >
-        <DropDownOption title="Profile" />
-        <DropDownOption title="Settings" />
-        <DropDownOption onClick={logOut} title="Log out" />
+        <DropDownOption onClick={() => navigate("/profile")} title="Профиль" />
+        <DropDownOption title="Настройки" />
+        <DropDownOption onClick={logOut} title="Выйти" />
       </div>
     </div>
   );

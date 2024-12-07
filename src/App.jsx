@@ -14,6 +14,8 @@ import { getUserProgress } from "./model/getUserProgress";
 import clsx from "clsx";
 import { setTheme } from "./actions/themeActions";
 import { extractComponent } from "./model/extractComponent";
+import { NotFoundPage } from "./pages/NotFoundPage";
+import { ProfilePage } from "./pages/ProfilePage";
 
 export default function App() {
   const user = useSelector(state => state.user.user);
@@ -23,6 +25,7 @@ export default function App() {
     {
       path: "/",
       element: <HomePage />,
+      errorElement: <NotFoundPage />,
     },
     {
       path: "/courses",
@@ -35,6 +38,10 @@ export default function App() {
     {
       path: "/courses/:course/:lessonId",
       element: <LessonPage />,
+    },
+    {
+      path: "/profile",
+      element: <ProfilePage />,
     },
   ]);
 
