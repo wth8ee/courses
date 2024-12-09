@@ -6,7 +6,7 @@ import { LockIcon } from "../icons/LockIcon";
 
 export function CourseProgramExample({ className }) {
   const program = programs.react;
-  const courseProgress = [34, 35, 36];
+  const courseProgress = [30, 31, 32, 33];
 
   const allLessons = getLessons(program);
   return (

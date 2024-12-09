@@ -68,7 +68,7 @@ export function Lesson2({ program, lessonId, progress }) {
       progress={progress}
       left={
         <>
-          <p className="text-adpt mb-5">
+          <p>
             Прежде чем приступить к написанию кода на React, необходимо
             настроить окружение для разработки. Это включает в себя установку
             редактора кода, настроек для работы с Node.js, npm (или yarn), и
@@ -76,10 +76,10 @@ export function Lesson2({ program, lessonId, progress }) {
             подробно рассмотрим, как настроить все необходимое для работы с
             React, используя популярные инструменты и практики.
           </p>
-          <ol className="text-adpt list-decimal list-ol flex flex-col gap-5 mb-5">
+          <ol className="list-decimal list-ol flex flex-col gap-8">
             <li>
-              <div className="mb-5">
-                <p className="mb-5 hl">Выбор редактора кода</p>
+              <div className="mb-8">
+                <p className="mb-8 hl">Выбор редактора кода</p>
                 Для начала работы с React нам понадобится редактор кода. Мы
                 рекомендуем использовать Visual Studio Code (VS Code) — это
                 мощный и удобный редактор, который имеет множество расширений
@@ -87,17 +87,17 @@ export function Lesson2({ program, lessonId, progress }) {
               </div>
               <ul className="list-disc ml-[20px]">
                 <li>
-                  <p className="mb-5">
+                  <p className="mb-8">
                     <span className="hl">Установка VS Code:</span> Перейдите на
                     официальный сайт VS Code и скачайте версию для вашей
                     операционной системы.
                   </p>
                 </li>
                 <li>
-                  <p className="mb-2 hl">
+                  <p className="mb-8 hl">
                     Основные расширения для работы с React:
                   </p>
-                  <ul className="list-disc ml-[20px] flex flex-col gap-1">
+                  <ul className="list-disc ml-[20px] flex flex-col gap-4">
                     <li>ESLint — для статической проверки кода.</li>
                     <li>Prettier — для форматирования кода.</li>
                     <li>
@@ -113,20 +113,20 @@ export function Lesson2({ program, lessonId, progress }) {
               </ul>
             </li>
             <li>
-              <div className="mb-5">
-                <p className="mb-5 hl">Установка Node.js и npm</p>
+              <div className="mb-8">
+                <p className="mb-8 hl">Установка Node.js и npm</p>
                 Для работы с React необходимо установить Node.js — это среда для
                 выполнения JavaScript на серверной стороне. С Node.js также
                 поставляется менеджер пакетов npm (или альтернативно, yarn),
                 который используется для установки библиотек и инструментов.
               </div>
-              <ul className="list-decimal ml-[20px] flex flex-col gap-5">
+              <ul className="list-decimal ml-[20px] flex flex-col gap-8">
                 <li>
                   <span className="hl">Установка Node.js:</span> Перейдите на
                   официальный сайт Node.js, скачайте и установите LTS-версию.
                 </li>
                 <li>
-                  <p className="mb-5">
+                  <p className="mb-8">
                     <span className="hl">Проверка установки:</span> После
                     установки откройте командную строку и введите команды:
                   </p>
@@ -135,37 +135,37 @@ export function Lesson2({ program, lessonId, progress }) {
               </ul>
             </li>
             <li>
-              <div className="mb-5">
-                <p className="hl mb-5">
+              <div className="mb-8">
+                <p className="hl mb-8">
                   Создание React-приложения с помощью Create React App
                 </p>
-                <ol className="list-ol flex flex-col gap-5">
+                <ol className="list-ol flex flex-col gap-8">
                   <li>
-                    <p className="mb-5">
+                    <p className="mb-8">
                       <span className="hl">Создание проекта:</span> Для создания
                       нового проекта используйте команду:
                     </p>
                     <CodeExample code={`npx create-react-app my-app`} />
-                    <p className="pt-5">
+                    <p className="pt-8">
                       После выполнения этой команды будет создана папка с именем
                       my-app, содержащая все необходимые файлы и настройки для
                       работы с React.
                     </p>
                   </li>
                   <li>
-                    <p className="mb-5">
+                    <p className="mb-8">
                       <span className="hl">Запуск приложения:</span> Перейдите в
                       созданную папку и запустите проект:
                     </p>
                     <CodeExample code={`cd my-app\nnpm start`} />
-                    <p className="mt-5">
+                    <p className="mt-8">
                       Ваше приложение будет доступно по адресу
                       http://localhost:3000.
                     </p>
                   </li>
                   <li>
-                    <p className="mb-5 hl">Структура файлов в проекте:</p>
-                    <p className="mb-5">
+                    <p className="mb-8 hl">Структура файлов в проекте:</p>
+                    <p className="mb-8">
                       Когда вы создаете проект с помощью Create React App,
                       создается следующая структура файлов:
                     </p>
@@ -184,7 +184,7 @@ export function Lesson2({ program, lessonId, progress }) {
 ├── package-lock.json          # Точное состояние установленных пакетов
 └── README.md                  # Описание проекта`}
                     />
-                    <ul className="list-ul mt-5 flex flex-col gap-5">
+                    <ul className="list-ul mt-8 flex flex-col gap-4">
                       <li>
                         <span className="hl">public/index.html</span> — это
                         основной HTML-файл, который загружается в браузер. React
@@ -205,43 +205,41 @@ export function Lesson2({ program, lessonId, progress }) {
               </div>
             </li>
             <li>
-              <p className="hl mb-5">
-                Создание React-приложения с помощью Vite
-              </p>
-              <p className="mb-5">
+              <p className="hl">Создание React-приложения с помощью Vite</p>
+              <p>
                 Vite — это современный инструмент для сборки, который
                 значительно быстрее, чем Create React App, особенно на больших
                 проектах.
               </p>
-              <ol className="list-ol flex flex-col gap-5">
+              <ol className="list-ol flex flex-col">
                 <li>
-                  <p className="mb-5">
+                  <p className="mb-8">
                     <span className="hl">Создание проекта:</span> Чтобы создать
                     проект с помощью Vite, выполните следующую команду:
                   </p>
                   <CodeExample
                     code={`npm create vite@latest my-vite-app --template react`}
                   />
-                  <p className="mt-5">
+                  <p className="mt-8">
                     Это создаст новый проект с тем же набором инструментов, что
                     и Create React App, но с более быстрой сборкой.
                   </p>
                 </li>
                 <li>
-                  <p className="mb-5">
+                  <p className="mb-8">
                     <span className="hl">Запуск приложения:</span> Перейдите в
                     созданную папку и запустите проект:
                   </p>
                   <CodeExample
                     code={`cd my-vite-app\nnpm install\nnpm run dev`}
                   />
-                  <p className="mt-5">
+                  <p className="mt-8">
                     Приложение будет доступно по адресу http://localhost:5173.
                   </p>
                 </li>
                 <li>
-                  <p className="mb-5 hl">Структура файлов в проекте:</p>
-                  <p className="mb-5">
+                  <p className="mb-8 hl">Структура файлов в проекте:</p>
+                  <p className="mb-8">
                     Структура файлов в проекте, созданном с помощью Vite, схожа
                     с тем, что создается в Create React App:
                   </p>
@@ -258,7 +256,7 @@ export function Lesson2({ program, lessonId, progress }) {
 ├── package.json               # Настройки проекта и зависимости
 └── vite.config.js             # Конфигурация Vite`}
                   />
-                  <ul className="list-ul mt-5 flex flex-col gap-5">
+                  <ul className="list-ul mt-8 flex flex-col gap-4">
                     <li>
                       <span className="hl">src/main.jsx</span> — точка входа в
                       приложение.
@@ -273,8 +271,8 @@ export function Lesson2({ program, lessonId, progress }) {
               </ol>
             </li>
           </ol>
-          <div className="mb-5">
-            <p className="mb-5 hl text-adptxl">Заключение</p>
+          <div>
+            <p className="mb-8 hl text-adptxl">Заключение</p>
             <p>
               Теперь у вас есть все инструменты для начала разработки на React.
               Вы узнали, как установить и настроить редактор, менеджер пакетов,
@@ -287,7 +285,7 @@ export function Lesson2({ program, lessonId, progress }) {
       }
       task={
         <>
-          <p className="mb-2">Пройдите тест по материалам урока.</p>
+          <p>Пройдите тест по материалам урока.</p>
         </>
       }
       test={test}

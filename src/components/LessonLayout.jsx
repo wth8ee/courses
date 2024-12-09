@@ -23,6 +23,7 @@ export function LessonLayout({
   program,
   lessonId,
   progress,
+  ё,
 }) {
   const user = useSelector(state => state.user.user);
   const [userCode, setUserCode] = useState(code || "");
@@ -131,12 +132,14 @@ export function LessonLayout({
           </a>{" "}
           - {lessonId}/{courses[course]?.lessons}
         </div>
-        <h1 className="text-adptxl text-opposite font-medium mb-5 mt-0">
+        <h1 className="text-adptxl text-opposite font-medium mb-8 mt-0">
           {lesson}
         </h1>
-        <div className="text-ct7">{left}</div>
-        <h2 className="text-adptxl text-ct7 font-medium mb-5">Задание</h2>
-        <div className="text-ct6">{task}</div>
+        <div className="text-ct7 flex flex-col gap-8 text-adpt mb-8 lesson-content">
+          {left}
+        </div>
+        <h2 className="text-adptxl text-opposite font-medium mb-8">Задание</h2>
+        <div className="text-ct7 mb-8">{task}</div>
       </div>
       <div
         className={clsx(

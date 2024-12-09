@@ -114,28 +114,28 @@ export function Lesson4({ program, lessonId, progress }) {
       progress={progress}
       left={
         <>
-          <p className="mb-5 text-adpt">
+          <p>
             В этом уроке мы создадим первый компонент на React, научимся
             использовать <span className="hl">props</span> для передачи данных в
             компоненты и рендерить их в DOM.
           </p>
 
-          <p className="mb-5 text-adpt">
+          <p>
             Компоненты — это строительные блоки React-приложений. В React
             компоненты представляют собой функции или классы, которые возвращают
             описание того, как должен выглядеть интерфейс. Мы будем использовать
             функциональные компоненты.
           </p>
 
-          <p className="mb-5 text-adpt">
+          <p>
             Рассмотрим пример простого компонента, который выводит приветствие:
           </p>
 
-          <CodeExample code={value1} className="mb-5" jsx />
+          <CodeExample code={value1} jsx />
 
           <div>
             <p className="mb-5 text-adptmd hl">Объяснение кода:</p>
-            <ul className="list-ul flex flex-col gap-5 ml-5 mb-5">
+            <ul className="list-ul flex flex-col gap-4 ml-8">
               <li>
                 Мы создаем компонент <code>Greeting</code>, который принимает
                 <code>props</code> и возвращает JSX. В этом примере мы передаем
@@ -148,16 +148,16 @@ export function Lesson4({ program, lessonId, progress }) {
             </ul>
           </div>
 
-          <p className="mb-5 text-adpt">
+          <p>
             Теперь давайте создадим компонент <code>App</code>, который будет
             использовать компонент <code>Greeting</code>:
           </p>
 
-          <CodeExample code={value2} className="mb-5" jsx />
+          <CodeExample code={value2} jsx />
 
           <div>
-            <p className="mb-5 text-adptmd hl">Объяснение кода:</p>
-            <ul className="list-ul flex flex-col gap-5 ml-5 mb-5">
+            <p className="mb-8 text-adptmd hl">Объяснение кода:</p>
+            <ul className="list-ul flex flex-col gap-4 ml-8">
               <li>
                 Компонент <code>App</code> использует компонент{" "}
                 <code>Greeting</code> и передает ему значение пропса{" "}
@@ -170,7 +170,7 @@ export function Lesson4({ program, lessonId, progress }) {
             </ul>
           </div>
 
-          <p className="mb-5 text-adpt">
+          <p>
             Важно отметить, что <span className="hl">props</span> — это
             неизменяемые данные, которые передаются в компоненты. Компоненты
             React могут быть либо функциональными, либо классовыми. В нашем
@@ -178,19 +178,19 @@ export function Lesson4({ program, lessonId, progress }) {
             более просты и часто применяются в современных приложениях.
           </p>
 
-          <p className="mb-5 text-adpt">
+          <p>
             Рассмотрим способ деструктурирования пропсов, который позволяет
             упростить доступ к значениям пропсов прямо в параметрах функции
             компонента:
           </p>
 
-          <CodeExample code={value3} className="mb-5" jsx />
+          <CodeExample code={value3} jsx />
 
           <div>
-            <p className="mb-5 text-adptmd hl">
+            <p className="mb-8 text-adptmd hl">
               Объяснение деструктурирования:
             </p>
-            <ul className="list-ul flex flex-col gap-5 ml-5 mb-5">
+            <ul className="list-ul flex flex-col gap-4 ml-8">
               <li>
                 Вместо того чтобы обращаться к пропсам через{" "}
                 <code>props.name</code>, мы деструктурируем объект{" "}
@@ -204,29 +204,26 @@ export function Lesson4({ program, lessonId, progress }) {
             </ul>
           </div>
 
-          <p className="mb-5 text-adpt">
+          <p>
             Следующий шаг — это рендеринг компонентов в браузер. В React для
             этого используется метод <code>ReactDOM.render</code> или в более
             новых версиях React — метод <code>createRoot().render()</code>.
           </p>
 
-          <p className="mb-5 text-adpt">
-            Для рендеринга компонента в DOM мы используем следующий код:
-          </p>
+          <p>Для рендеринга компонента в DOM мы используем следующий код:</p>
 
           <CodeExample
             jsx
             code={`const root = document.getElementById('root');
 createRoot(root).render(<App />);`}
-            className="mb-5"
           />
 
-          <p className="mb-5 text-adpt">
+          <p>
             Теперь, когда вы создали компоненты, их можно рендерить на
             веб-странице, что позволяет пользователю увидеть ваше приложение.
           </p>
 
-          <p className="mb-5 text-adpt">
+          <p>
             Следующий шаг — создание простого компонента, который вы будете
             использовать в следующем упражнении.
           </p>
@@ -234,14 +231,12 @@ createRoot(root).render(<App />);`}
       }
       task={
         <>
-          <p className="mb-2">
+          <p className="mb-4">
             Напишите компонент <code>Welcome</code>, который отображает
             приветствие, используя пропс <code>userName</code>: "Welcome,
             [userName]!".
           </p>
-          <p className="mb-2">
-            Вызовите компонент и передайте в него имя пользователя.
-          </p>
+          <p>Вызовите компонент и передайте в него имя пользователя.</p>
         </>
       }
       test={test}

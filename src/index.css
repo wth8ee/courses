@@ -37,8 +37,14 @@
   --blue500: rgb(59, 130, 246);
 }
 
+.lesson-content h3 {
+  color: var(--ct9);
+  font-weight: 500;
+  font-size: max(1.2vw, 12px);
+}
+
 .hl {
-  color: var(--ct7);
+  color: var(--ct9);
   font-weight: 500;
 }
 

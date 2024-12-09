@@ -72,7 +72,7 @@ export function Lesson3({ program, lessonId, progress }) {
       progress={progress}
       left={
         <>
-          <p className="mb-5 text-adpt">
+          <p>
             <span className="hl">JSX (JavaScript XML)</span> — это
             синтаксический сахар для React, который позволяет писать код, очень
             похожий на HTML. Он позволяет разработчикам создавать компоненты с
@@ -80,22 +80,20 @@ export function Lesson3({ program, lessonId, progress }) {
             Это упрощает создание интерфейсов и улучшает читаемость кода.
           </p>
 
-          <p className="mb-5 text-adpt">
+          <p>
             JSX выглядит как HTML, но на самом деле это JavaScript, который
             транслируется в реальный код React. Когда вы пишете JSX, React
             использует JavaScript для того, чтобы динамически обновлять
             содержимое компонентов.
           </p>
 
-          <p className="mb-5 text-adpt">
-            Рассмотрим пример простого компонента с JSX:
-          </p>
+          <p>Рассмотрим пример простого компонента с JSX:</p>
 
-          <CodeExample code={value} className="mb-5" jsx />
+          <CodeExample code={value} jsx />
 
           <div>
-            <p className="mb-5 text-adptmd hl">В этом примере:</p>
-            <ul className="list-ul flex flex-col gap-5 ml-5 mb-5">
+            <p className="mb-8 text-adptmd hl">В этом примере:</p>
+            <ul className="list-ul flex flex-col gap-4 ml-8 mb-8">
               <li>
                 JSX позволяет легко вставлять JavaScript-переменные в
                 HTML-подобный код. В примере используется переменная{" "}
@@ -113,14 +111,14 @@ export function Lesson3({ program, lessonId, progress }) {
               </li>
             </ul>
 
-            <p className="mb-5 text-adpt">
+            <p>
               JSX делает код React более читаемым и удобным, позволяя работать с
               компонентами и состоянием через обычный JavaScript, но с
               возможностью использования синтаксиса, знакомого из HTML.
             </p>
           </div>
 
-          <p className="mb-5 text-adpt">
+          <p>
             JSX автоматически преобразуется в JavaScript-код при сборке проекта.
             Это преобразование происходит через такие инструменты, как Babel. В
             результате JSX-код превращается в вызовы{" "}
@@ -128,17 +126,17 @@ export function Lesson3({ program, lessonId, progress }) {
             элементов React.
           </p>
 
-          <p className="mb-5 text-adpt">
+          <p>
             Важно помнить, что JSX не является обязательным для использования в
             React. Это всего лишь удобство для работы с элементами, и в проекте
             можно использовать только чистый JavaScript.
           </p>
 
-          <p className="mb-5 text-adptmd hl">
+          <p className="text-adptmd hl">
             Вот основные правила и особенности синтаксиса JSX:
           </p>
 
-          <ul className="list-ul ml-5 mb-5 flex flex-col gap-5">
+          <ul className="list-ul ml-8 flex flex-col gap-4">
             <li>
               JSX должен быть внутри одного родительского элемента. Например,
               если вы хотите вернуть несколько элементов, их нужно обернуть в{" "}
@@ -171,12 +169,12 @@ export function Lesson3({ program, lessonId, progress }) {
       }
       task={
         <>
-          <p className="mb-2">
+          <p className="mb-4">
             Создайте компонент <code>ILearn</code>, который возвращает JSX с
             сообщением, "Я учу [технология]", использующим переменную для
             названия технологии. Например, "Я учу CSS".
           </p>
-          <p className="mb-2">
+          <p>
             Для этого используйте переменную <code>technology</code> и вставьте
             ее в JSX внутри тега <code>&lt;h1&gt;</code>.
           </p>
