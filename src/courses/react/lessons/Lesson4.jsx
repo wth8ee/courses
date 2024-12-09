@@ -58,7 +58,7 @@ export function Lesson4({ program, lessonId, progress }) {
         setRoot(null);
       }
 
-      const componentString = extractComponent(code);
+      const componentString = extractComponent(code, "Welcome");
       const whatsLeft = code.replace(componentString, "");
 
       userName = testCodeForCall(whatsLeft);

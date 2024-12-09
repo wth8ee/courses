@@ -2,24 +2,14 @@ import { countOccurrences } from "./countOccurences";
 
 export function extractComponent(code, name, k = 2) {
   if (!code || !code?.includes("function") || typeof code != "string") {
-    console.log(1);
-    console.log(code.includes("function"));
-    console.log(typeof code);
     return;
-  }
-  if (countOccurrences(code, "(") != countOccurrences(code, ")")) {
-    console.log(2);
+  } else if (countOccurrences(code, "(") != countOccurrences(code, ")")) {
     return;
-  }
-  if (countOccurrences(code, "{") != countOccurrences(code, "}")) {
-    console.log(3);
+  } else if (countOccurrences(code, "{") != countOccurrences(code, "}")) {
     return;
-  }
-  if (countOccurrences(code, "[") != countOccurrences(code, "]")) {
-    console.log(4);
+  } else if (countOccurrences(code, "[") != countOccurrences(code, "]")) {
     return;
-  }
-  if (name) {
+  } else if (name) {
     if (!code.includes(name)) {
       return;
     }
@@ -40,10 +30,14 @@ export function extractComponent(code, name, k = 2) {
     for (let i = 0; i < code.length; i++) {
       const s = code[i];
       if (s == " " || s == "(") {
-        if (component.split(" ").length == 2 && !roundOpened) {
+        if (
+          component.split(" ").filter(el => !!el).length == 2 &&
+          !roundOpened
+        ) {
           if (
             component
-              .split(" ")[1]
+              .split(" ")
+              .filter(el => !!el)[1]
               .split("")
               .filter(s => !"(){}".includes(s))
               .join("") != name

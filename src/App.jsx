@@ -47,6 +47,8 @@ export default function App() {
 
   const dispatch = useDispatch();
 
+  const code = "function    Building(";
+
   useEffect(() => {
     const theme = localStorage.getItem("theme");
     if (theme) {
