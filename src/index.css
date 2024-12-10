@@ -37,6 +37,30 @@
   --blue500: rgb(59, 130, 246);
 }
 
+.lesson-content ol {
+  list-style: decimal;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lesson-content ol::marker {
+  color: var(--opposite);
+}
+
+.lesson-content ul {
+  list-style: disc;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lesson-content ul::marker {
+  color: var(--opposite);
+}
+
 .lesson-content h3 {
   color: var(--ct9);
   font-weight: 500;

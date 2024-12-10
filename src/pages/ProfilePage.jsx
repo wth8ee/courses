@@ -54,6 +54,7 @@ export function ProfilePage() {
             const title = course.title;
             const icon = course.icon;
             const unavailable = course.unavailable;
+            const link = course.link;
 
             return (
               <ProgressBar
@@ -63,6 +64,7 @@ export function ProfilePage() {
                 title={title}
                 Icon={icon}
                 unavailable={unavailable}
+                link={link}
               />
             );
           })}

@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export function ProgressBar({
   a = 0,
@@ -8,8 +9,11 @@ export function ProgressBar({
   Icon,
   unavailable,
   className,
+  link,
 }) {
   const theme = useSelector(state => state.theme.theme);
+
+  const navigate = useNavigate();
 
   const colors =
     theme == "light"
@@ -33,7 +37,12 @@ export function ProgressBar({
         unavailable && "opacity-50"
       )}
     >
-      <Icon className="h-[max(2.1vw,20px)] w-[max(2.1vw,20px)]" />
+      <div
+        onClick={() => navigate(link)}
+        className="h-[max(2.1vw,20px)] w-[max(2.1vw,20px)]"
+      >
+        <Icon className="h-[max(2.1vw,20px)] w-[max(2.1vw,20px)] cursor-pointer" />
+      </div>
       <div
         className={clsx(
           className,
