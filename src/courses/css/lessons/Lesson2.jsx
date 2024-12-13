@@ -5,12 +5,13 @@ import { getElements } from "/src/model/getElements";
 
 export function Lesson2({ program, lessonId, progress }) {
   const test = () => {
-    const elements = Array.from(getElements());
-    elements?.shift();
-    const isH1 = elements?.[0]?.tagName == "H1";
-    const hasClass = elements?.[0]?.classList?.contains("violet-text");
-    const text = elements?.[0]?.textContent;
-    return isH1 && hasClass && text;
+    const element = Array.from(getElements())?.[1];
+    const isH1 = element?.tagName == "H1";
+    const hasClass = element?.classList?.contains("violet-text");
+    const text = element?.textContent;
+    const color = getComputedStyle(element)?.color;
+    const matches = color == "rgb(98, 0, 255)";
+    return isH1 && hasClass && text && matches;
   };
 
   return (
@@ -27,7 +28,7 @@ export function Lesson2({ program, lessonId, progress }) {
           </p>
           <p>
             В классе <code>violet-text</code> цвету задайте значение{" "}
-            <code>violet</code>.
+            <code>rgb(98, 0, 255)</code>.
           </p>
         </>
       }

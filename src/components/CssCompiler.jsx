@@ -3,7 +3,6 @@ import DOMPurify from "dompurify";
 import React from "react";
 
 export function CssCompiler({ code, className }) {
-  console.log(className);
   const [htmlCode, cssCode] = code;
 
   const style = `<style>${cssCode}</style>`;
