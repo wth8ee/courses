@@ -23,10 +23,8 @@ export function LessonLayout({
   program,
   lessonId,
   progress,
-  ё,
 }) {
   const user = useSelector(state => state.user.user);
-  const [userCode, setUserCode] = useState(code || "");
 
   const lessons = getLessons(program);
   const lesson = lessons[lessonId - 1];
@@ -36,6 +34,9 @@ export function LessonLayout({
       course = key;
     }
   }
+
+  const initialState = course == "css" ? ["", ""] : code || "";
+  const [userCode, setUserCode] = useState(initialState);
 
   const courseProgress = progress?.[course];
   const nextAvailable = courseProgress?.includes(Number(lessonId));
@@ -118,15 +119,22 @@ export function LessonLayout({
     setCompleted(false);
   };
 
-  const handleChange = (value, viewDate) => {
-    setUserCode(value);
+  const handleChange = (value, viewDate, type) => {
+    if (type) {
+      const types = { html: 0, css: 1 };
+      const newCode = userCode?.slice();
+      newCode[types[type]] = value;
+      setUserCode(newCode);
+    } else {
+      setUserCode(value);
+    }
     reset();
   };
 
   return (
     <div className="w-full h-full flex gap-5 lg:flex-nowrap flex-wrap">
       <div className="w-[max(50%,400px)] flex-grow bg-layout rounded-lg flex flex-col shadow p-5 overflow-y-auto">
-        <div className="mb-2 text-adptmd text-ct7">
+        <div className="mb-4 text-adptmd text-ct7">
           <a className="cursor-pointer underline" href={courses[course]?.link}>
             {courses[course]?.title}
           </a>{" "}
@@ -143,8 +151,7 @@ export function LessonLayout({
       </div>
       <div
         className={clsx(
-          "w-[max(50%,400px)] min-h-[500px] flex flex-col gap-5 flex-grow bg-layout shadow rounded-lg p-5 mb-5 lg:mb-0",
-          typeof test == "object" ? "overflow-hidden" : "overflow-y-auto"
+          "w-[max(50%,400px)] relative min-h-[500px] flex flex-col flex-grow bg-layout shadow rounded-lg mb-4 lg:mb-0 overflow-y-hidden"
         )}
       >
         {(typeof test == "function" || !test) && (
@@ -155,22 +162,28 @@ export function LessonLayout({
           />
         )}
         {typeof test == "object" && <TestTask test={test} reset={reset} />}
-        <div className="flex gap-5 justify-center">
-          <Button onClick={toPrev} disabled={lessonId < 2} outline>
-            Предыдущий
-          </Button>
-          <Button onClick={check} className={buttonColor}>
-            {buttonText}
-          </Button>
-          <Button
-            onClick={toNext}
-            disabled={lessonId == lessons.length || !nextAvailable}
-            outline
-          >
-            Следующий
-          </Button>
-        </div>
+        <ButtonField />
       </div>
     </div>
   );
+
+  function ButtonField() {
+    return (
+      <div className="flex gap-4 justify-center p-4 pt-2 w-full h-20">
+        <Button onClick={toPrev} disabled={lessonId < 2} outline>
+          Предыдущий
+        </Button>
+        <Button onClick={check} className={buttonColor}>
+          {buttonText}
+        </Button>
+        <Button
+          onClick={toNext}
+          disabled={lessonId == lessons.length || !nextAvailable}
+          outline
+        >
+          Следующий
+        </Button>
+      </div>
+    );
+  }
 }

@@ -9,33 +9,14 @@ import { ReduxIcon } from "../icons/ReduxIcon";
 import { TailwindIcon } from "../icons/TailwindIcon";
 import { TsIcon } from "../icons/TsIcon";
 import { getLessons } from "../model/getLessons";
+import { cssCourse } from "./css/course";
 import { htmlCourse } from "./html/course";
 import { programs } from "./programs";
 import { reactCourse } from "./react/course";
 
 export const courses = {
   html: htmlCourse,
-  css: {
-    unavailable: true,
-    title: "CSS",
-    lessons: getLessons(programs.css).length,
-    description: `
-      CSS (Cascading Style Sheets) используется для стилизации 
-      веб-страниц. Он позволяет изменять внешний вид элементов 
-      на странице, включая цвета, шрифты, отступы и расположение.
-    `,
-    icon: CssIcon,
-    link: "/courses/css",
-    largeDescription: `
-      CSS (Cascading Style Sheets) — язык стилей, который позволяет разделить 
-      структуру и оформление веб-страниц. С его помощью можно задавать цвета, 
-      шрифты, отступы, анимации и эффекты, делая веб-страницы привлекательными 
-      и удобными для пользователей. В этом курсе вы научитесь оформлять сайты, 
-      работать с макетами и адаптивным дизайном, создавать стильные анимации 
-      и трансформации. Вы освоите основные принципы CSS, а также узнаете, как 
-      добиться кроссбраузерности и мобильной адаптивности.
-    `,
-  },
+  css: cssCourse,
   javascript: {
     unavailable: true,
     title: "JavaScript",

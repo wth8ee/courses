@@ -116,15 +116,13 @@ export function Lesson3({ program, lessonId, progress }) {
         </>
       }
       task={
-        <>
-          <p>
-            Теперь создайте базовый HTML-документ. Используйте стандартную
-            структуру: добавьте декларацию типа документа, элементы{" "}
-            <code>&lt;head&gt;</code> и <code>&lt;body&gt;</code>. Внутри{" "}
-            <code>&lt;body&gt;</code> создайте заголовок <code>&lt;h1&gt;</code>{" "}
-            и параграф <code>&lt;p&gt;</code>.
-          </p>
-        </>
+        <p>
+          Теперь создайте базовый HTML-документ. Используйте стандартную
+          структуру: добавьте декларацию типа документа, элементы{" "}
+          <code>&lt;head&gt;</code> и <code>&lt;body&gt;</code>. Внутри{" "}
+          <code>&lt;body&gt;</code> создайте заголовок <code>&lt;h1&gt;</code> и
+          параграф <code>&lt;p&gt;</code>.
+        </p>
       }
       test={test}
     />

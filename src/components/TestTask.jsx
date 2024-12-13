@@ -6,12 +6,12 @@ export function TestTask({ test, reset }) {
   return (
     <div
       id="test"
-      className="w-full flex flex-col gap-10 outline overflow-y-auto outline-[1px] outline-ct3 p-2 rounded-lg"
+      className="w-full p-4 flex flex-col gap-10 outline overflow-y-auto outline-[1px] outline-ct3 rounded-lg"
     >
       {test?.map((el, i) => (
-        <div key={i} className="flex flex-col gap-5 w-full items-start">
+        <div key={i} className="flex flex-col gap-8 w-full items-start">
           <p className="hl">{el.question}</p>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-4">
             {el?.options?.map((option, i) => (
               <div key={i} className="flex gap-2">
                 <input

@@ -1,3 +1,3 @@
 export function getElements() {
-    return document.getElementById("compiler").children
+  return document.getElementById("compiler").children;
 }

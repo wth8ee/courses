@@ -85,7 +85,7 @@ export function Lesson2({ program, lessonId, progress }) {
                 мощный и удобный редактор, который имеет множество расширений
                 для работы с JavaScript и React.
               </div>
-              <ul className="list-disc ml-[20px]">
+              <ul className="list-disc ml-[20px] mb-8">
                 <li>
                   <p className="mb-8">
                     <span className="hl">Установка VS Code:</span> Перейдите на
@@ -285,7 +285,7 @@ export function Lesson2({ program, lessonId, progress }) {
       }
       task={
         <>
-          <p>Пройдите тест по материалам урока.</p>
+          <p>Пройдите тест по содержанию урока.</p>
         </>
       }
       test={test}

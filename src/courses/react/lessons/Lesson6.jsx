@@ -107,6 +107,11 @@ export function Lesson6({ program, lessonId, progress }) {
       lessonId={lessonId}
       program={program}
       progress={progress}
+      task={
+        <>
+          <p>Пройдите тест по содержанию урока.</p>
+        </>
+      }
       left={
         <>
           <p>

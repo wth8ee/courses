@@ -124,7 +124,7 @@ export function Lesson6({ program, lessonId, progress }) {
       task={
         <>
           <p className="mb-2">Создайте два параграфа, содержащие:</p>
-          <ol className="list-disc ml-5 mb-5 list-decimal">
+          <ol className="ml-5 list-decimal">
             <li>Жирный, курсивный, жирный (важный) и акцентированный текст</li>
             <li>Подчеркнутый и выделенный задним фоном текст</li>
           </ol>

@@ -24,9 +24,9 @@ export function Header() {
   }
 
   return (
-    <div className="w-full gap-8 sticky justify-between mb-5 px-[max(2vw,20px)] py-[max(1vw,15px)] h-[max(5vw,80px)] shadow bg-layout flex items-center top-0">
+    <div className="w-full gap-[max(2vw,14px)] sticky justify-between mb-5 px-[max(2vw,20px)] py-[max(1vw,15px)] h-[max(5vw,80px)] shadow bg-layout flex items-center top-0">
       <NavPanel />
-      <div className="flex gap-8 items-center">
+      <div className="flex gap-[max(2vw,14px)] items-center">
         <div
           onClick={changeTheme}
           className="cursor-pointer rounded-full shadow outline outline-[1px] outline-ct3"

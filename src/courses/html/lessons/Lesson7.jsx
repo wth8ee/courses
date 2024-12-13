@@ -81,7 +81,7 @@ function helloWorld() {
       task={
         <>
           <p className="mb-2">Создайте страницу, которая будет содержать:</p>
-          <ol className="list-disc ml-5 mb-5 list-decimal">
+          <ol className="ml-5 list-decimal">
             <li>
               Цитату с использованием тега <code>&lt;blockquote&gt;</code>.
             </li>
