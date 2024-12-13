@@ -30,7 +30,9 @@ export function CourseProgram({ program, course, progress, className, open }) {
   function ProgramBlock({ block }) {
     return (
       <div className="flex flex-col">
-        <div className="text-adptlg font-medium mb-5">{block.name}</div>
+        <div className="text-[max(1.8vw,24px)] font-medium mb-5">
+          {block.name}
+        </div>
         <div className="flex flex-col bg-transparent shadow rounded-lg gap-[1px]">
           {block?.lessons?.map((lesson, i, lessons) => {
             const id = allLessons.indexOf(lesson) + 1;
@@ -47,7 +49,7 @@ export function CourseProgram({ program, course, progress, className, open }) {
                   className={clsx(
                     isCompleted && "text-green-600 hover:text-green-500",
                     unavailable && "text-ct4 hover:text-ct4 cursor-not-allowed",
-                    "p-[max(1.5vw,10px)] flex items-center justify-between bg-layout text-adptmd transition-colors",
+                    "p-[max(1.5vw,10px)] flex items-center justify-between bg-layout text-[max(1.2vw,12px)] transition-colors",
                     !unavailable && "cursor-pointer",
                     !isCompleted && !unavailable && "hover:text-ct6",
                     i == 0 && "rounded-t-lg",

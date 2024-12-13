@@ -19,7 +19,7 @@ export default {
       },
       fontSize: {
         adptlg: "max(1.8vw,16px)",
-        adptmd: "max(1.2vw,12px)",
+        adptmd: "max(1.2vw,20px)",
         adptxl: "max(2.5vw,25px)",
         adptxxl: "max(4vw,30px)",
         adptsm: "max(0.8vw,8px)",

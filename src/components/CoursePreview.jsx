@@ -51,7 +51,7 @@ export function CoursePreview({ course, progress, courseKey, open }) {
         p-adptxl rounded-xl gap-adptxl items-center`}
     >
       <div className="min-w-[max(50%,300px)]">
-        <div className="font-medium text-adptxxl mb-adpt flex gap-adptxl">
+        <div className="font-medium text-adptxxl mb-[max(2vw,15px)] flex gap-adptxl">
           {!showIcon && (
             <div className="flex justify-center items-center">
               <course.icon className="h-10 w-10" />
@@ -59,13 +59,17 @@ export function CoursePreview({ course, progress, courseKey, open }) {
           )}
           {course.title} - Бесплатный курс
         </div>
-        <div className="text-adptmd text-ct6 mb-adptlg">
+        <div className="text-[max(1.2vw,12px)] text-ct6 mb-[max(2vw,15px)]">
           {course.largeDescription}
         </div>
-        <div className="text-adptmd text-ct5 mb-adptxl font-light">
+        <div className="text-adptmd text-ct5 mb-[max(2vw,30px)] font-light">
           {course.lessons} {lesson} с практикой в браузере
         </div>
-        <Button disabled={course?.unavailable} onClick={handleStart}>
+        <Button
+          className="text-[max(1.2vw,16px)]"
+          disabled={course?.unavailable}
+          onClick={handleStart}
+        >
           {buttonText}
         </Button>
       </div>

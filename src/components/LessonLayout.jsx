@@ -151,7 +151,7 @@ export function LessonLayout({
       </div>
       <div
         className={clsx(
-          "w-[max(50%,400px)] relative min-h-[500px] flex flex-col flex-grow bg-layout shadow rounded-lg mb-4 lg:mb-0 overflow-y-hidden"
+          "w-[max(50%,400px)] relative h-full flex flex-col flex-grow bg-layout shadow rounded-lg mb-4 lg:mb-0 overflow-y-hidden"
         )}
       >
         {(typeof test == "function" || !test) && (
@@ -169,7 +169,7 @@ export function LessonLayout({
 
   function ButtonField() {
     return (
-      <div className="flex gap-4 justify-center p-4 pt-2 w-full h-20">
+      <div className="flex gap-4 justify-center p-4 pt-2 w-full h-[max(4vw,60px)]">
         <Button onClick={toPrev} disabled={lessonId < 2} outline>
           Предыдущий
         </Button>

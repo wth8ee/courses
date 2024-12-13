@@ -64,7 +64,7 @@
 .lesson-content h3 {
   color: var(--ct9);
   font-weight: 500;
-  font-size: max(1.2vw, 12px);
+  font-size: max(1.2vw, 20px);
 }
 
 .hl {

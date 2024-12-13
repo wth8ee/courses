@@ -41,7 +41,7 @@ export function CourseProgramExample({ className }) {
                   className={clsx(
                     isCompleted && "text-green-600 hover:text-green-500",
                     unavailable && "text-ct4 hover:text-ct4 cursor-not-allowed",
-                    "p-[max(0.8vw,8px)] w-full flex items-center gap-[max(1vw,10px)] justify-between bg-layout text-adptsm transition-colors",
+                    "p-[max(0.8vw,8px)] w-full flex items-center gap-[max(1vw,10px)] justify-between bg-layout text-[max(0.8vw,10px)] transition-colors",
                     !unavailable && "cursor-pointer",
                     !isCompleted && !unavailable && "hover:text-ct6",
                     i == 0 && "rounded-t-lg",

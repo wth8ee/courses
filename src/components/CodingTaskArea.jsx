@@ -21,7 +21,7 @@ export function CodingTaskArea({ userCode, handleChange, course }) {
     title = ["Ваш HTML код", "Ваш CSS код"];
   }
   return (
-    <div className="flex flex-col gap-4 p-4 h-[calc(100%-5rem)]">
+    <div className="flex flex-col gap-4 p-4 h-[calc(100%-max(4vw,60px))]">
       <div className="h-[calc(50%-0.5rem)]">
         {typeof title == "string" && (
           <>
@@ -32,31 +32,31 @@ export function CodingTaskArea({ userCode, handleChange, course }) {
                 jsx={course == "react"}
                 code={userCode}
                 onChange={handleChange}
-                className="h-full overflow-y-auto"
+                className="h-full max-h-[50vw] overflow-y-auto"
               />
             </div>
           </>
         )}
         {typeof title == "object" && (
-          <div className="h-full flex gap-4">
-            <div className="w-[calc(50%-0.5rem)]">
+          <div className="h-full flex gap-4 sm:flex-nowrap flex-wrap">
+            <div className="sm:w-[max(275px,calc(50%-0.5rem))] w-full">
               <div className="text-adptmd hl mb-4 h-6">{title[0]}</div>
               <div className="h-[calc(100%-2.5rem)]">
                 <CodeWindow
                   code={userCode[0]}
                   onChange={value => handleChange(value, null, "html")}
-                  className="h-full overflow-y-auto overflow-x-hidden"
+                  className="h-full max-h-[50vw] overflow-y-auto overflow-x-hidden"
                 />
               </div>
             </div>
-            <div className="w-[calc(50%-0.5rem)]">
+            <div className="sm:w-[max(275px,calc(50%-0.5rem))] w-full">
               <div className="text-adptmd hl mb-4 h-6">{title[1]}</div>
               <div className="h-[calc(100%-2.5rem)]">
                 <CodeWindow
                   cs={true}
                   code={userCode[1]}
                   onChange={value => handleChange(value, null, "css")}
-                  className="h-full overflow-y-auto overflow-x-hidden"
+                  className="h-full max-h-[50vw] overflow-y-auto overflow-x-hidden"
                 />
               </div>
             </div>

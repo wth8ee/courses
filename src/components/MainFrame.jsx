@@ -12,7 +12,7 @@ export function MainFrame({ title, description, content, className }) {
       <div className="md:max-w-[50%] flex flex-col justify-center items-center">
         <h3 className="text-adptxl font-medium">{title}</h3>
         <div className="h-[1px] w-[64%] bg-ct4 my-adptmd" />
-        <p className="text-adptmd text-ct7 lg:w-[max(150px,80%)] mb-adptmd md:mb-0 w-[90%] text-center lg:text-left">
+        <p className="text-[max(1.2vw,12px)] text-ct7 lg:w-[max(150px,80%)] mb-adptmd md:mb-0 w-[90%] text-center lg:text-left">
           {description}
         </p>
       </div>
