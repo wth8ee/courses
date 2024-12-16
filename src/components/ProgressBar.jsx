@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 export function ProgressBar({
   a = 0,
   b = 100,
-  title,
   Icon,
   unavailable,
   className,
@@ -55,7 +54,7 @@ export function ProgressBar({
           style={{ width: `${percent}%` }}
         ></div>
       </div>
-      <div className="text-[max(0.85vw,8px)] w-[max(4vw,40px)] font-medium text-ct8 flex flex-col items-center justify-center text-center">
+      <div className="text-[max(1vw,10px)] w-[max(4vw,40px)] font-medium text-ct8 flex flex-col items-center justify-center text-center">
         <div>
           {a} / {b}
         </div>
