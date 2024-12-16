@@ -5,6 +5,7 @@ import { CheckMarkIcon } from "../icons/CheckMarkIcon";
 import { LockIcon } from "../icons/LockIcon";
 import { courses } from "../courses/main";
 import { useSelector } from "react-redux";
+import { lessons } from "../courses/lessons";
 
 export function CourseProgram({ program, course, progress, className, open }) {
   if (!program?.length) {
@@ -18,6 +19,8 @@ export function CourseProgram({ program, course, progress, className, open }) {
 
   const allLessons = getLessons(program);
   const courseProgress = progress?.[course];
+
+  const openLessons = lessons[course]?.length;
 
   return (
     <div className={clsx(className, "flex flex-col gap-5")}>
@@ -36,11 +39,14 @@ export function CourseProgram({ program, course, progress, className, open }) {
         <div className="flex flex-col bg-transparent shadow rounded-lg gap-[1px]">
           {block?.lessons?.map((lesson, i, lessons) => {
             const id = allLessons.indexOf(lesson) + 1;
+            const temporarilyOpen = id <= openLessons;
             const isCompleted = courseProgress?.includes(id);
             const lastCompleted = courseProgress?.length
               ? courseProgress?.[courseProgress.length - 1]
               : 0;
-            const unavailable = lastCompleted + 1 < id || globalUnavailable;
+            const unavailable = temporarilyOpen
+              ? false
+              : lastCompleted + 1 < id || globalUnavailable;
 
             return (
               <div key={i}>
@@ -56,7 +62,7 @@ export function CourseProgram({ program, course, progress, className, open }) {
                     i == lessons.length - 1 && "rounded-b-lg"
                   )}
                   onClick={() => {
-                    if (!unavailable && user) {
+                    if ((!unavailable && user) || temporarilyOpen) {
                       navigate(`/courses/${course}/${id}`);
                     } else if (!unavailable && !user) {
                       open();

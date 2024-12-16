@@ -18,16 +18,20 @@ export function LessonPage() {
   const courseLessons = lessons?.[course];
   const Lesson = courseLessons?.[lessonId - 1];
 
+  const openLessons = lessons[course]?.length;
+
   const lessonAccess =
     progress?.[course]?.includes(Number(lessonId) - 1) || lessonId == 1;
 
   let warning = null;
-  if (!user) {
-    warning = "noauth";
-  } else if (!lessonAccess) {
-    warning = "noaccess";
-  } else if (!Lesson) {
-    warning = "nolesson";
+  if (lessonId > openLessons) {
+    if (!user) {
+      warning = "noauth";
+    } else if (!lessonAccess) {
+      warning = "noaccess";
+    } else if (!Lesson) {
+      warning = "nolesson";
+    }
   }
 
   return (
