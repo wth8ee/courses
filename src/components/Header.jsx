@@ -32,9 +32,9 @@ export function Header() {
           className="cursor-pointer rounded-full shadow outline outline-[1px] outline-ct3"
         >
           {theme == "light" ? (
-            <LightThemeIcon className="h-12 text-ct5 rounded-full shadow p-2.5" />
+            <LightThemeIcon className="h-[max(3vw,40px)] w-[max(3vw,40px)] text-ct5 rounded-full shadow p-2.5" />
           ) : (
-            <DarkThemeIcon className="h-12 text-ct5 rounded-full p-2.5 shadow" />
+            <DarkThemeIcon className="h-[max(3vw,40px)] w-[max(3vw,40px)] text-ct5 rounded-full p-2.5 shadow" />
           )}
         </div>
         <UserProfileCard />

@@ -14,12 +14,12 @@ export function UserProfileCard({ className }) {
   return (
     <div className={`${className} relative`}>
       <div
-        className="cursor-pointer flex items-center gap-adpt"
+        className="cursor-pointer flex items-center gap-[max(2vw,14px)]"
         onClick={() => setIsOpen(!isOpen)}
       >
         {user && (
           <AvatarPlaceholder
-            className="max-h-12 max-w-12"
+            className="h-[max(3vw,40px)] w-[max(3vw,40px)] min-h-[40px] min-w-[40px]"
             onClick={() => setIsOpen(true)}
           />
         )}
