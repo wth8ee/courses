@@ -5,6 +5,7 @@ import { programs } from "../courses/programs";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { WarningElement } from "../components/WarningElement.jsx";
+import { allOpenLessons } from "../courses/open.js";
 
 export function LessonPage() {
   const progress = useSelector(state => state.progress?.progress)?.progress;
@@ -18,7 +19,7 @@ export function LessonPage() {
   const courseLessons = lessons?.[course];
   const Lesson = courseLessons?.[lessonId - 1];
 
-  const openLessons = lessons[course]?.length;
+  const openLessons = allOpenLessons?.[course]?.length;
 
   const lessonAccess =
     progress?.[course]?.includes(Number(lessonId) - 1) || lessonId == 1;

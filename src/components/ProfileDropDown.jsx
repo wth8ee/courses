@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 export function ProfileDropDown({ isOpen, onClose, className }) {
   const navigate = useNavigate();
   const user = useSelector(state => state.user.user);
+  const theme = useSelector(state => state.theme.theme);
 
   if (!isOpen) {
     return;
@@ -32,7 +33,8 @@ export function ProfileDropDown({ isOpen, onClose, className }) {
         className={clsx(
           className,
           `absolute shadow rounded-lg right-2 w-40 top-[calc(max(5vw,80px)+0.5rem)] 
-                flex flex-col gap-1 bg-layout`
+                flex flex-col gap-1 p-1`,
+          theme == "light" ? "bg-[#f1f5f9]" : "bg-black"
         )}
       >
         <DropDownOption onClick={() => navigate("/profile")} title="Профиль" />

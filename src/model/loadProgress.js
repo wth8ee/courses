@@ -15,7 +15,7 @@ export async function loadProgress(email, dispatch) {
       javascript: [],
       git: [],
       tailwind: [],
-      nodejs: [],
+      npm: [],
       react: [],
       typescript: [],
       redux: [],

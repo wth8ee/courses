@@ -4,6 +4,7 @@ import { GitIcon } from "../icons/GitIcon";
 import { HtmlIcon } from "../icons/HtmlIcon";
 import { JsIcon } from "../icons/JsIcon";
 import { NodejsIcon } from "../icons/NodejsIcon";
+import { NpmIcon } from "../icons/NpmIcon";
 import { ReactIcon } from "../icons/ReactIcon";
 import { ReduxIcon } from "../icons/ReduxIcon";
 import { TailwindIcon } from "../icons/TailwindIcon";
@@ -11,6 +12,7 @@ import { TsIcon } from "../icons/TsIcon";
 import { getLessons } from "../model/getLessons";
 import { cssCourse } from "./css/course";
 import { htmlCourse } from "./html/course";
+import { npmCourse } from "./npm/course";
 import { programs } from "./programs";
 import { reactCourse } from "./react/course";
 
@@ -80,26 +82,7 @@ export const courses = {
       с помощью гибких и мощных инструментов Tailwind.
     `,
   },
-  nodejs: {
-    unavailable: true,
-    title: "Node JS",
-    lessons: getLessons(programs.nodejs).length,
-    description: `
-      Node.js — это серверная среда выполнения JavaScript, основанная на 
-      движке V8 от Google Chrome. Она используется для разработки масштабируемых 
-      и высокоэффективных серверных приложений.
-    `,
-    icon: NodejsIcon,
-    link: "/courses/nodejs",
-    largeDescription: `
-      Node.js — это среда выполнения для JavaScript, которая позволяет запускать 
-      код на сервере. Это не просто серверный JavaScript, а полноценная платформа 
-      для создания серверных приложений. В этом курсе вы научитесь работать с 
-      Node.js для создания веб-серверов, API и обработки запросов от клиентов. 
-      Вы освоите основы работы с модулями, асинхронность в Node.js и научитесь 
-      интегрировать серверное приложение с базами данных и другими сервисами.
-    `,
-  },
+  npm: npmCourse,
   react: reactCourse,
   typescript: {
     unavailable: true,

@@ -6,6 +6,7 @@ import { LockIcon } from "../icons/LockIcon";
 import { courses } from "../courses/main";
 import { useSelector } from "react-redux";
 import { lessons } from "../courses/lessons";
+import { allOpenLessons } from "../courses/open";
 
 export function CourseProgram({ program, course, progress, className, open }) {
   if (!program?.length) {
@@ -20,7 +21,7 @@ export function CourseProgram({ program, course, progress, className, open }) {
   const allLessons = getLessons(program);
   const courseProgress = progress?.[course];
 
-  const openLessons = lessons[course]?.length;
+  const openLessons = allOpenLessons?.[course]?.length;
 
   return (
     <div className={clsx(className, "flex flex-col gap-5")}>
